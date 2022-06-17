@@ -1,0 +1,60 @@
+@import url('https://use.typekit.net/wjd7ohr.css');
+
+#header {
+    /* height: 30px; */
+    width: 100%;
+    background-color: #43C0F6;
+    border: #41BAEF solid 1px;
+    display: flex;
+    font-family: 'open-sans', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+#logo {
+    display: flex;
+    width: 30%;
+    justify-content: center;
+}
+
+#headerNav {
+    height: 60px;
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+#loginLanguage {
+    display: flex;
+    width: 38%;
+    justify-content: center;
+}
+
+/* The holder is literally just a dive to hold the languages and login section.
+I didn't know what else to call it*/
+#holder{
+    display: flex;
+    flex-direction: column;
+}
+
+#language {
+    font-weight: 400;
+    padding: 5px;
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flag{
+    padding: 0px 5px;
+}
+
+#login{
+    display: flex;
+    padding: 12px;
+    justify-self: flex-end;
+    font-size: 16px;
+}
