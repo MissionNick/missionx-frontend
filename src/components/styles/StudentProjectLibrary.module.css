@@ -1,0 +1,102 @@
+
+#navBar {
+    /* Layout Properties */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    height: 64px;
+    width: 100%;
+
+    /* UI Properties */
+    background-color: #43C0F6;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    color: white;
+    font-family: "open-sans", sans-serif;
+    font-size: small;
+}
+
+#navLeft{
+    width:20%;
+    padding-left: 10%;
+}
+
+#logo {
+    width: 146px;
+    height: 60px;
+}
+
+
+#navMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width:60%;
+    margin-top: auto;
+    padding-bottom: 1%;
+}
+
+#navRight {
+    display: flex;
+    flex-direction: column;
+    width:20%;
+    margin-top: auto;
+    padding-bottom: .5%;
+    padding-right: 10%;
+    text-align: right;
+}
+
+#lang {
+    height: 12px;
+    font-Size: smaller;
+    padding-bottom: 3%;
+    }
+
+#user {
+    font-Size: small;
+    text-transform: 'capitalize';
+}
+
+
+#studentHome {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    font-family: "open-sans", sans-serif;
+}
+
+#studentContent  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#pageTitle {
+    margin-left: 25%;
+    margin-right: 5%;
+    font-family: "open-sans", sans-serif;
+    color: #767676;
+}
+
+#filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    padding-left: 10%;
+}
+
+filterTitle {
+    font-size: small;
+    color:#767676 ;
+    border-bottom-style: solid;
+    border-color: #767676;
+    padding-bottom: 3px;
+   }
+
+filterSectionEnd{
+    margin-bottom: 20%;
+}
