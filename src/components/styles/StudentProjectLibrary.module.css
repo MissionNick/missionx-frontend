@@ -60,15 +60,22 @@
 
 #studentHome {
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
     width:100%;
     font-family: "open-sans", sans-serif;
+}
+
+#studentProjects {
+display: flex;
+flex-direction: row;
+width: 100%;
+
 }
 
 #studentContent  {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     width: 80%;
     padding-left: 5%;
     padding-right: 5%;
@@ -81,11 +88,18 @@
     color: #767676;
 }
 
+#pageOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:fit-content;
+}
+
 #filter {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 15%;
+    width: 20%;
     padding-left: 10%;
 }
 
@@ -100,3 +114,5 @@ filterTitle {
 filterSectionEnd{
     margin-bottom: 20%;
 }
+
+

@@ -1,12 +1,12 @@
-import styles from './styles/StudentProjectLibrary.module.css';
-import maoriFlag from './images/Maori_flag.png';
-import nzFlag from './images/NZ_Flag.png';
-import logosrc from './images/Star_Logo_07-2.png';
-import { Link } from 'react-router-dom';
+import styles from "./styles/StudentProjectLibrary.module.css";
+import maoriFlag from "./images/Maori_flag.png";
+import nzFlag from "./images/NZ_Flag.png";
+import logosrc from "./images/Star_Logo_07-2.png";
+import { Link } from "react-router-dom";
 
 // Using Const here until user state /session details are implemented.
-const userImage = './images/sampleUserImage.png';
-const userName = 'Sample User'.toUpperCase();  
+const userImage = "./images/sampleUserImage.png";
+const userName = "Sample User".toUpperCase();  
 
 function Navbar() {
     const { navBar, logo, navMenu, lang, user, navLeft, navRight} = styles;
