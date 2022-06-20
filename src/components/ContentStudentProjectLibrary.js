@@ -8,7 +8,6 @@ function Content() {
     return (
         <>
             <div id={styles.studentContent}>
-
                 <PageOptions />
                 <StudentProjects />
                 

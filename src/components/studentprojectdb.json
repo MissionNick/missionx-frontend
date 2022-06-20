@@ -1,0 +1,17 @@
+[
+{"id":1,"imgsrc":"./images/projects/Project 01.png","label":"Introduction","level":"BEGINNER","type":"Animation"},
+{"id":2,"imgsrc":"./images/projects/Project 02.png","label":"My Birthday","level":"BEGINNER","type":"Animation"},
+{"id":3,"imgsrc":"./images/projects/Project 03.png","label":"10 Block Challenge","level":"BEGINNER","type":"Animation"},
+{"id":4,"imgsrc":"./images/projects/Project 04.png","label":"Build a band","level":"BEGINNER","type":"Animation"},
+{"id":5,"imgsrc":"./images/projects/Project 05.png","label":"The bear and the monkey","level":"BEGINNER","type":"Aimation"},
+{"id":6,"imgsrc":"./images/projects/Project 06.png","label":"Debugging","level":"BEGINNER","type":"Animation"},
+{"id":7,"imgsrc":"./images/projects/Project 07.png","label":"About me","level":"BEGINNER","type":"Animation"},
+{"id":8,"imgsrc":"./images/projects/Project 08.png","label":"I am here!","level":"BEGINNER","type":"Animation"},
+{"id":9,"imgsrc":"./images/projects/Project 09.png","label":"Funny faces","level":"BEGINNER","type":"Animation"},
+{"id":10,"imgsrc":"./images/projects/Project 10.png","label":"It tickles!","level":"BEGINNER","type":"Animation"},
+{"id":11,"imgsrc":"./images/projects/Project 11.png","label":"Penguin in a Desert","level":"BEGINNER","type":"Animation"},
+{"id":12,"imgsrc":"./images/projects/Project 12.png","label":"Time Travel","level":"BEGINNER","type":"Animation"},
+{"id":13,"imgsrc":"./images/projects/Project 13.png","label":"Birthday card","level":"BEGINNER","type":"Animation"},
+{"id":14,"imgsrc":"./images/projects/Project 14.1.png","label":"The Lion and the Mouse Part 1","level":"BEGINNER","type":"Animation"},
+{"id":15,"imgsrc":"./images/projects/Project 14.2.png","label":"The Lion and the Mouse Part 2","level":"BEGINNER","type":"Animation"}
+]
