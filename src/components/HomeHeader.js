@@ -7,8 +7,8 @@ import userCircle from "./images/UserCircle.png";
 export default function HomeHeader() {
   return (
     <div id={styles.header}>
-      <div id={styles.logo}>
-        <img src={logo} alt="LevelUp Works Logo" />
+      <div id={styles.logoWrapper}>
+        <img id={styles.logo} src={logo} alt="LevelUp Works Logo" />
       </div>
       <div id={styles.headerNav}>
         <div>HOME</div>
