@@ -1,10 +1,20 @@
+import { useState } from 'react'
+
 import styles from "./styles/StudentProjectLibrary.module.css"
-import Filter from "./FilterStudentProjectLibrary";
+import Filter from "./FilterStudentProjectLibrary"
 import Content from "./ContentStudentProjectLibrary"
 
 const { studentHome, pageTitle } = styles;
 
+
 function Home() {
+
+    const [subSelect, setSubSelect] = useState([1]);
+    const updateSubSelect = (val) => {
+        console.log('Changed subscription ', val);
+        setSubSelect(val);
+        //1=Free,2=Premium,3=Both
+    }
 
     return (
         <>
@@ -14,7 +24,7 @@ function Home() {
                 </div>
 
             <div id={studentHome}>
-                <Filter />
+                <Filter subSelect={subSelect} updateSubSelect={updateSubSelect}  />
                 <Content />
                 </div>
         </>

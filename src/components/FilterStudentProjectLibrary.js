@@ -1,12 +1,32 @@
+import { useState } from 'react'
+
 import styles from "./styles/StudentProjectLibrary.module.css"
 
-function Filter() {
+
+
+function Filter({ subSelect, updateSubSelect }) {
+    
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleOnChange = () => {
+        setIsChecked(!isChecked);
+    };
+    
+    
 
     return (
         <div id={styles.filter}>
-            <filterTitle>SUBSCRIPTION</filterTitle> 
-            <label><input type="checkbox" checked="checked"/>Free</label>
-            <label><input type="checkbox" checked="" />Premium</label>
+            <filterTitle>SUBSCRIPTION</filterTitle>   
+            <label><input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleOnChange}
+            /> Free</label>
+            <label><input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleOnChange}
+            />Premium</label>
             <filterSectionEnd />
             
             <filterTitle>ACTIVITY TYPE</filterTitle> 

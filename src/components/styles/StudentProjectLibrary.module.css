@@ -22,7 +22,7 @@ letter-spacing: 0.4px;
 
 #navLeft{
     width:20%;
-    margin-left: 10%;
+    margin-left: 7%;
 }
 
 #logo {
@@ -46,7 +46,7 @@ letter-spacing: 0.4px;
     width:20%;
     margin-top: auto;
     margin-bottom: .5%;
-    margin-right: 13%;
+    margin-right: 7%;
     text-align: right;
 }
 
@@ -81,13 +81,13 @@ font-family: "open-sans", sans-serif;
     justify-content:flex-start;
     width: 80%;
     margin-left: 5%;
-    margin-right: 10%;
+    margin-right: 7%;
     text-align: right;
 }
 
 #pageTitle {
-    margin-left: 23%;
-    margin-right: 5%;
+    margin-left: 25%;
+    margin-right: 7%;
     margin-top:5%;
     margin-bottom:5%;
     font-family: "open-sans", sans-serif;
@@ -107,8 +107,8 @@ font-family: "open-sans", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    width: 20%;
-    padding-left: 10%;
+    width: 25%;
+    padding-left: 7%;
     color: #767676;
 }
 
