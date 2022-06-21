@@ -10,7 +10,7 @@ const { studentHome, pageTitle } = styles;
 
 function Home() {
 
-    const [subSelect, setSubSelect] = useState([1]);
+    const [subSelect, setSubSelect] = useState(3);
     const updateSubSelect = (val) => {
         console.log('Changed subscription ', val);
         setSubSelect(val);
@@ -28,7 +28,7 @@ function Home() {
 
             <div id={studentHome}>
                 <Filter subSelect={subSelect} updateSubSelect={updateSubSelect}  />
-                <Content />
+                <Content subSelect={subSelect}/>
             </div>
             
         </>

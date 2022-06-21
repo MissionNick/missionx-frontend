@@ -7,16 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function PageOptions({handleLevelClick,handleDisplayNumberClick,levelSelect,displayNumber}) {
 
-/* const handleClick=(e) => {
-        console.log(e.target)
-        e.target.class="btn btn-primary"
-        //reload projects with selected filter
-    }*/
+const handleClick=(e) => {
+        console.log(e)
+    handleLevelClick(e)
+         //??? CHange the button variants?
+    }
+
+
 
     return (
         
         <div id={styles.pageOptions}>
-            <ToggleButtonGroup onClick={handleLevelClick} size="sm" type="radio" name="level" defaultValue={"BEGINNER"}>
+            <ToggleButtonGroup onClick={handleClick} size="sm" type="radio" name="level" defaultValue={"BEGINNER"}>
                 <ToggleButton variant='primary' id="level-beginner" value={"BEGINNER"}>
                     BEGINNER
                     </ToggleButton>

@@ -9,7 +9,7 @@ import StudentProjects from "./ProjectsStudentProjectLibrary";
 
 
 
-function Content() {
+function Content({ subSelect }) {
 
 
     const [levelSelect, setLevelSelect] = useState("BEGINNER");
@@ -32,7 +32,7 @@ function Content() {
         <>
             <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
-                <StudentProjects displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
+                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
             </div>
         </>
     )
