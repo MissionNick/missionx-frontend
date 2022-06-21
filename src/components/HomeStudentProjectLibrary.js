@@ -7,6 +7,7 @@ import Content from "./ContentStudentProjectLibrary"
 const { studentHome, pageTitle } = styles;
 
 
+
 function Home() {
 
     const [subSelect, setSubSelect] = useState([1]);
@@ -16,9 +17,11 @@ function Home() {
         //1=Free,2=Premium,3=Both
     }
 
+  
+    
     return (
         <>
-            <div id={pageTitle}>
+            <div id={pageTitle} >
                 <h1>PROJECTS</h1>
                 <p>Welcome to the project library. You can use the filter on the right to help you search for specific projects.</p>
                 </div>
@@ -26,7 +29,8 @@ function Home() {
             <div id={studentHome}>
                 <Filter subSelect={subSelect} updateSubSelect={updateSubSelect}  />
                 <Content />
-                </div>
+            </div>
+            
         </>
     )
 }

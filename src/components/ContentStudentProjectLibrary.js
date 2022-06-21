@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState} from 'react';
 
 import styles from "./styles/StudentProjectLibrary.module.css"
 
@@ -26,17 +26,17 @@ function Content() {
 
     const [recordIndex, setRecordIndex] = useState(0);
     const nextPage = () => { setRecordIndex(recordIndex + displayNumber) };
-    
+
     
     return (
         <>
             <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
                 <StudentProjects displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
-                
             </div>
         </>
     )
 }
 
 export default Content;
+

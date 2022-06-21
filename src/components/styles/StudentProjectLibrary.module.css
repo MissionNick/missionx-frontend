@@ -3,6 +3,7 @@
 font-weight: 700;
 letter-spacing: 0.4px;
 }
+
 #navBar {
     /* Layout Properties */
     display: flex;
@@ -10,7 +11,7 @@ letter-spacing: 0.4px;
     justify-content:space-around;
     height: 64px;
     width: 100%;
-
+   
     /* UI Properties */
     background-color: #43C0F6;
     box-shadow: 0px 3px 6px #00000029;
@@ -73,6 +74,7 @@ letter-spacing: 0.4px;
 display: flex;
 flex-direction: row;
 font-family: "open-sans", sans-serif;
+
 }
 
 #studentContent  {
@@ -110,6 +112,7 @@ font-family: "open-sans", sans-serif;
     width: 25%;
     padding-left: 7%;
     color: #767676;
+    
 }
 
 filterTitle {
@@ -127,7 +130,6 @@ filterSectionEnd{
 #projects{
     display:flex;
     flex-wrap: wrap;
-    
 }
 
 .showProject{
@@ -137,6 +139,12 @@ filterSectionEnd{
     font-family: "open-sans", sans-serif;
     color: #767676;
     cursor: pointer;
+}
+
+.btnbacktotop{
+    margin-right: 7%;
+    margin-bottom: 2%;
+    text-align: right;
 }
 
 

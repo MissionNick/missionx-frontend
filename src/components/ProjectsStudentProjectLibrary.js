@@ -6,6 +6,7 @@ function StudentProjects({ displayNumber, recordIndex, nextPage, levelSelect, su
     return (
         <div id={styles.projects}>
             <ShowProjects />
+            
         </div>
     );
 
@@ -25,7 +26,7 @@ function StudentProjects({ displayNumber, recordIndex, nextPage, levelSelect, su
                             src={require(`${ imgsrc }`)} alt="" />
                             <p>{label}</p>
                             <p>{level}|{type}</p>
-                        </div>
+                    </div>
                     )
                 })
             }
