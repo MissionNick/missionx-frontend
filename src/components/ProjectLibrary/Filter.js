@@ -1,8 +1,11 @@
 import { useState } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
+import { Fallback } from '../shared/Fallback'
+import { errorHandler } from '../shared/ErrorHandler'
 
-import styles from "./styles/StudentProjectLibrary.module.css"
+import styles from "../styles/StudentProjectLibrary.module.css"
 
-
+console.log("Component Load : ProjectLibrary/Filter ")
 
 function Filter({ subSelect, updateSubSelect }) {
     
@@ -27,7 +30,7 @@ function Filter({ subSelect, updateSubSelect }) {
                     return sum + index+1;
                 }
                 return sum;
-             },
+            },
                 0
             );
 
@@ -36,8 +39,8 @@ function Filter({ subSelect, updateSubSelect }) {
     };
     
 
-      
     return (
+        <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
         <div id={styles.filter}>
             <filterTitle>SUBSCRIPTION</filterTitle>   
             <div className="sub-list">
@@ -82,6 +85,7 @@ function Filter({ subSelect, updateSubSelect }) {
             <filterSectionEnd />
 
         </div>
+        </ErrorBoundary>
     )
     
 }

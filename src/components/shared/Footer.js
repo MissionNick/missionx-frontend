@@ -1,7 +1,11 @@
-import styles from "../styles/Footer.module.css";
+import styles from '../styles/Footer.module.css';
+import { ErrorBoundary } from 'react-error-boundary'
+import { Fallback } from './Fallback'
+import { errorHandler } from './ErrorHandler'
 
 export default function Footer() {
   return (
+    <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
     <div id={styles.footer}>
       <div id={styles.footerContentHolder}>
         <div className={styles.footerSection}>
@@ -50,6 +54,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </ErrorBoundary>
   );
 }

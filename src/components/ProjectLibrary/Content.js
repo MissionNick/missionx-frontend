@@ -1,11 +1,14 @@
-import { useState} from 'react';
+import { useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary'
+import { Fallback } from '../shared/Fallback'
+import { errorHandler } from '../shared/ErrorHandler'
 
-import styles from "./styles/StudentProjectLibrary.module.css"
+import styles from "../styles/StudentProjectLibrary.module.css"
 
-import PageOptions from "./PageOptionsStudentProjectLibrary"
-import StudentProjects from "./ProjectsStudentProjectLibrary";
+import PageOptions from "./PageOptions"
+import StudentProjects from "./Projects";
 
-
+console.log("Component Load : ProjectLibrary/Content ")
 
 
 
@@ -30,10 +33,12 @@ function Content({ subSelect }) {
     
     return (
         <>
+            <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
             <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
                 <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
             </div>
+            </ErrorBoundary>
         </>
     )
 }

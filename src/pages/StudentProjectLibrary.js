@@ -1,8 +1,11 @@
 import {useRef } from 'react'
 
 import Footer from "../components/shared/Footer"
-import Navbar from "../components/NavbarStudentProjectLibrary"
-import Home from "../components/HomeStudentProjectLibrary"
+import Navbar from "../components/shared/Navbar"
+import Home from "../components/ProjectLibrary/Home"
+import { ErrorBoundary } from 'react-error-boundary'
+import { Fallback } from '../components/shared/Fallback'
+import { errorHandler } from '../components/shared/ErrorHandler'
 
 import styles from "../components/styles/StudentProjectLibrary.module.css";
 
@@ -17,6 +20,7 @@ function StudentProjectLibrary() {
     }
     
     return (
+        <ErrorBoundary>
         <div ref={contentRef}>
             <Navbar />
             <Home />
@@ -27,7 +31,7 @@ function StudentProjectLibrary() {
                 </div>
             <Footer />           
         </div>
-
+        </ErrorBoundary>
     )
 }
 

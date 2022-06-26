@@ -1,8 +1,13 @@
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/Button';
+import { ErrorBoundary } from 'react-error-boundary'
+import { Fallback } from '../shared/Fallback'
+import { errorHandler } from '../shared/ErrorHandler'
 
-import styles from './styles/StudentProjectLibrary.module.css'
+import styles from '../styles/StudentProjectLibrary.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+console.log("Component Load : ProjectLibrary/PageOptions ")
 
 
 function PageOptions({handleLevelClick,handleDisplayNumberClick,levelSelect,displayNumber}) {
@@ -17,6 +22,7 @@ const handleClick=(e) => {
 
     return (
         
+        <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
         <div id={styles.pageOptions}>
             <ToggleButtonGroup onClick={handleClick} size="sm" type="radio" name="level" defaultValue={"BEGINNER"}>
                 <ToggleButton variant='primary' id="level-beginner" value={"BEGINNER"}>
@@ -43,7 +49,7 @@ const handleClick=(e) => {
                         </ToggleButtonGroup>
             </div>
             </div>
-            
+        </ErrorBoundary>   
 
     )
 }
