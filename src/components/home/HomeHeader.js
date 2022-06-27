@@ -1,8 +1,8 @@
-import styles from "./styles/HomeHeader.module.css";
-import logo from "./images/Logo.png";
-import nzFlag from "./images/NZFlag.png";
-import maoriFlag from "./images/MaoriFlag.png";
-import userCircle from "./images/UserCircle.png";
+import styles from "../styles/home/HomeHeader.module.css"
+import logo from "../images/Logo.png";
+import nzFlag from "../images/NZ_flag.png";
+import maoriFlag from "../images/Maori_flag.png";
+import userCircle from "../images/User_circle.png";
 
 export default function HomeHeader() {
   return (

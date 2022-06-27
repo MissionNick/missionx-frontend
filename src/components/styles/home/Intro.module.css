@@ -1,0 +1,77 @@
+#intro{
+    font-family: 'nunito';
+    display: flex;
+    flex-direction: column;
+    height: 20.5vw;
+    background-image: url('../../images/home/Hero.png');
+    background-size:100%;
+    background-repeat: no-repeat;
+}
+
+#introTitle{
+    width: 30%;
+    color: #6C6C6C;
+    font-size: 3vw;
+    font-weight: 700;
+    padding: 3% 10% 1%;
+}
+
+#specialWord{
+    font-weight: 900;
+    color: #42C0F6;
+}
+
+#introContent{
+    font-family: 'open-sans';
+    width: 28%;
+    color: #6C6C6C;
+    padding: 0px 10%;
+    font-size: 1.2vw;
+    font-weight: 700;
+}
+
+#introButtons{
+    display: flex;
+    margin: 1vw 17vw;
+}
+
+button{
+    font-family: 'nunito';
+    font-weight: 800;
+    font-size: 0.8vw;
+    height: 1.6vw;
+    width: 9vw;
+    text-align: center;
+    /* padding: 0 auto; */
+    border-radius: 6px;
+    box-shadow: 0 4px 5px #00000029;
+    font-weight: 900;
+}
+
+#learn{
+    color: #707070;
+    border: 0.2vw solid #43C0F6;
+    
+    
+}
+
+#SignUp{
+    margin:0 3.5vw;
+}
+
+#SignUpButton{
+    color: #F0EFEF;
+    background-color: #F91C85;
+    border: none;
+}
+
+#TAndC{
+    padding: 1% 0;
+    width: 9vw;
+    font-family: 'open-sans';
+    font-size: 0.5vw;
+    font-weight: 700;
+    color: #707070;
+    text-align: center;
+}
+
