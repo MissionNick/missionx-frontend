@@ -4,16 +4,8 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
 
-// Issues use src=rquire(${image})  - Module could not be loaded errors?
 
-import fallbackimg from '../../assets/images/projects/Project 01.png'
-
-console.log("Component Load : ProjectLibrary/Projects ")
-
-const baseURL = "../../assets/images/projects/"
-
-
-
+console.log("Component Load : ProjectLibrary/Projects ");
 
 
 export default function Projects({ displayNumber, recordIndex, nextPage, levelSelect, subSelect }) {
@@ -27,6 +19,7 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
     );
 
     function ShowProjects() {
+        
         console.log("Update Projects. Display Number:", displayNumber, " Level:", levelSelect, "SubSelect:", subSelect);
         const levelProjects = ProjectsDB.filter(project => project.level === levelSelect)
         console.log("Filtered Projects ", levelProjects)
@@ -37,11 +30,10 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
                 {
                     subProjects.slice(recordIndex, displayNumber).map(project => {
                         const { imgsrc, label, level, type } = project;
-                        const image = baseURL + imgsrc;
+                        const projectimg = require('../../assets/images/projects/' + imgsrc);
                         return (
                             <div className={styles.showProject}>
-                                <img style={{ verticalAlign: 'middle', paddingRight: '3%' }}
-                                    src={fallbackimg} alt="image" />
+                                <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={projectimg} alt="image" />
                                 <p>{label}</p>
                                 <p>{level}|{type}</p>
                             </div>

@@ -8,7 +8,8 @@ import { Fallback } from './Fallback'
 import { errorHandler } from './ErrorHandler'
 
 // Using Const here until user state /session details are implemented.
-import userImage from "../../assets/images/sampleUserImage.png";
+
+const userImage = require("../../assets/images/sampleUserImage.png");
 const userName = "Sample User".toUpperCase();  
 
 console.log("Component Load : Navbar")
@@ -39,7 +40,7 @@ function Navbar() {
                             <img style={{ paddingLeft: '3%' }} src={maoriFlag} alt="Maori" />
                         </div>
                         <div id={user}>
-                            <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={userImage} alt="user" />
+                            <img style={{ verticalAlign: 'middle', paddingRight: '3%' }}  src={userImage} alt="user" />
                             {userName}
                         </div>
                     </div>
