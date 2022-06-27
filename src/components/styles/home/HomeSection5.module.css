@@ -1,0 +1,68 @@
+#sectionFive{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    padding: 4vw 0;
+}
+
+#sectionFiveLeft{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+#teacherimg{
+    
+    width: 70%;
+}
+
+#sectionFiveRight{
+    width: 50%;
+    
+    color: #6C6C6C;
+}
+
+#sectionFiveTitle{
+    font-family: 'nunito';
+    font-weight: 700;
+    font-size: 2.1vw;
+    padding: 1.8vw 0;
+}
+
+#sectionFiveSubtitle{
+    font-family: 'open-sans';
+    font-weight: 700;
+    font-size: 1.5vw;
+    padding-bottom: 1.8vw;
+}
+
+#sectionFiveInfo{
+    width: 90%;
+font-family: 'open-sans';
+    font-weight: 700;
+    font-size: 1vw;
+}
+
+#sectionFiveButtonHolder{
+    padding-top: 3vw;
+    display: flex;
+}
+
+.sectionFiveButtons{
+    font-family: 'nunito';
+    font-weight: 900;
+    padding-top: 0.3%;
+    box-shadow: #00000029 0px 4px 5px;
+}
+
+#enquire{
+    color: #707070;
+    border:#43C0F6 2px solid;
+    margin-right: 5vw;
+}
+
+#sectionFiveSignup{
+    background-color: #F91C85;
+    color: #F0EFEF;
+    border: none;
+}
