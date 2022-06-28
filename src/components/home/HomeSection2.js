@@ -1,10 +1,10 @@
 import styles from "../styles/home/HomeSection2.module.css";
 import Tile from "./Tile";
-import frame from '../images/home/Frame_Copy.png'
-import joystick from "../images/home/Joystick.png";
-import robot from "../images/home/Robot.png";
-import augment from "../images/home/Augmented-reality.png";
-import project1 from "../images/home/Projects1.png";
+import frame from '../../assets/images/home/Frame_Copy.png'
+import joystick from "../../assets/images/home/Joystick.png";
+import robot from "../../assets/images/home/Robot.png";
+import augment from "../../assets/images/home/Augmented-reality.png";
+import project1 from "../../assets/images/home/Projects1.png";
 import CircleButton from './CircleButton'
 
 export default function HomeSection2() {

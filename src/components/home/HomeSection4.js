@@ -1,5 +1,5 @@
 import styles from '../styles/home/HomeSection4.module.css'
-import star from '../images/home/Star.png'
+import star from "../../assets/images/home/Star.png";
 import { useState } from 'react';
 
 

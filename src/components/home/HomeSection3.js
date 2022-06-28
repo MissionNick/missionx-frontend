@@ -1,9 +1,9 @@
 import styles from "../styles/home/HomeSection3.module.css";
 import TileCard from "./TileCard";
-import image1 from "../images/home/Group1.png";
-import image2 from "../images/home/Group2.png";
-import image3 from "../images/home/Group3.png";
-import image4 from "../images/home/Group4.png";
+import image1 from "../../assets/images/home/Group1.png";
+import image2 from "../../assets/images/home/Group2.png";
+import image3 from "../../assets/images/home/Group3.png";
+import image4 from "../../assets/images/home/Group4.png";
 
 export default function HomeSection3() {
   return (

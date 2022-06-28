@@ -20,7 +20,7 @@
 #tileImage{
     mix-blend-mode: overlay;
     object-fit: cover;
-    width: 4vw;
+    width: 5vw;
     padding: 0.8vw;
 }
 

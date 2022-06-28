@@ -1,5 +1,5 @@
 import styles from "../styles/home/HomeSection5.module.css";
-import teacher from "../images/home/Teacher.png";
+import teacher from "../../assets/images/home/Teacher.png";
 
 export default function HomeSection5() {
   return (

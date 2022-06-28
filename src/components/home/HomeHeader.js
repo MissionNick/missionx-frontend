@@ -1,8 +1,8 @@
 import styles from "../styles/home/HomeHeader.module.css"
-import logo from "../images/Logo.png";
-import nzFlag from "../images/NZ_flag.png";
-import maoriFlag from "../images/Maori_flag.png";
-import userCircle from "../images/User_circle.png";
+import logo from "../../assets/images/Star_Logo_07-2.png";
+import nzFlag from "../../assets/images/NZ_Flag.png";
+import maoriFlag from "../../assets/images/Maori_flag.png";
+import userCircle from "../../assets/images/User_circle.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
         <Link style={{ textDecoration: "none", color: "white" }} to="/">HOME</Link>
         <Link style={{ textDecoration: "none", color: "white" }} to="/StudentProjectLibrary">PROJECTS</Link>
         <Link style={{ textDecoration: "none", color: "white" }} to="/MockTeacher">TEACHERS</Link>
-      </div>
+      </div>  
       <div id={styles.loginLanguage}>
         <div id={styles.holder}>
           <div id={styles.language}>
