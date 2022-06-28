@@ -2,19 +2,21 @@ import styles from "../styles/home/Intro.module.css";
 
 export default function Intro() {
   return (
-    <div id={styles.intro}>
-      <div id={styles.introTitle}>
+    <div id={styles.introHome}>
+      <div id={styles.introHomeTitle}>
         Prepare young minds for a better
         <span id={styles.specialWord}> future.</span>
       </div>
-      <div id={styles.introContent}>
+      <div id={styles.introHomeContent}>
         Let us help you advance students in Digital Technologies and other
         learning areas with our project-based learning programme.
       </div>
-      <div id={styles.introButtons}>
-        <button id={styles.learn}>LEARN MORE</button>
+      <div id={styles.introHomeButtons}>
+        <button className={styles.buttonHome} id={styles.learn}>
+          LEARN MORE
+        </button>
         <div id={styles.SignUp}>
-          <button id={styles.SignUpButton}>
+          <button className={styles.buttonHome} id={styles.SignUpButton}>
             SIGN UP
           </button>
           <div id={styles.TAndC}>

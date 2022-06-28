@@ -1,4 +1,6 @@
-#intro{
+*{box-sizing: unset;}
+
+#introHome{
     font-family: 'nunito';
     display: flex;
     flex-direction: column;
@@ -8,12 +10,13 @@
     background-repeat: no-repeat;
 }
 
-#introTitle{
-    width: 30%;
+#introHomeTitle{
+    width: 35%;
     color: #6C6C6C;
     font-size: 3vw;
     font-weight: 700;
-    padding: 3% 10% 1%;
+    padding: 2% 10% 1%;
+    line-height: normal;
 }
 
 #specialWord{
@@ -21,7 +24,7 @@
     color: #42C0F6;
 }
 
-#introContent{
+#introHomeContent{
     font-family: 'open-sans';
     width: 28%;
     color: #6C6C6C;
@@ -30,16 +33,16 @@
     font-weight: 700;
 }
 
-#introButtons{
+#introHomeButtons{
     display: flex;
     margin: 1vw 17vw;
+    border-radius: 6px;
 }
 
-button{
+.buttonHome{
     font-family: 'nunito';
-    font-weight: 800;
     font-size: 0.8vw;
-    height: 1.6vw;
+    height: 1.4vw;
     width: 9vw;
     text-align: center;
     /* padding: 0 auto; */
@@ -51,8 +54,7 @@ button{
 #learn{
     color: #707070;
     border: 0.2vw solid #43C0F6;
-    
-    
+    height: 1.2vw;
 }
 
 #SignUp{

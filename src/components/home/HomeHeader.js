@@ -3,6 +3,7 @@ import logo from "../images/Logo.png";
 import nzFlag from "../images/NZ_flag.png";
 import maoriFlag from "../images/Maori_flag.png";
 import userCircle from "../images/User_circle.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,9 +12,9 @@ export default function Header() {
         <img src={logo} alt="LevelUp Works Logo" />
       </div>
       <div id={styles.headerNav}>
-        <div>HOME</div>
-        <div>FEATURES</div>
-        <div>TEACHERS</div>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/">HOME</Link>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/StudentProjectLibrary">PROJECTS</Link>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/MockTeacher">TEACHERS</Link>
       </div>
       <div id={styles.loginLanguage}>
         <div id={styles.holder}>

@@ -1,0 +1,92 @@
+@import url('https://use.typekit.net/wjd7ohr.css');
+
+*{
+font-weight: 700;
+letter-spacing: 0.4px;
+}
+
+#studentHome {
+    display: flex;
+    flex-direction: row ;
+    width:100%;
+    font-family: "open-sans", sans-serif;
+}
+
+#studentProjects {
+display: flex;
+flex-direction: row;
+font-family: "open-sans", sans-serif;
+
+}
+
+#studentContent  {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    width: 80%;
+    margin-left: 5%;
+    margin-right: 7%;
+    text-align: right;
+}
+
+#pageTitle {
+    margin-left: 25%;
+    margin-right: 7%;
+    margin-top:5%;
+    margin-bottom:5%;
+    font-family: "open-sans", sans-serif;
+    font-weight: 700;
+    color: #767676;
+}
+
+#pageOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:fit-content;
+    margin-right: 5%;
+}
+
+#filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 25%;
+    padding-left: 7%;
+    color: #767676;
+    
+}
+
+filterTitle {
+    font-size: small;
+    color:#767676 ;
+    border-bottom-style: solid;
+    border-color: #767676;
+    padding-bottom: 3px;
+   }
+
+filterSectionEnd{
+    margin-bottom: 20%;
+}
+
+#projects{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.showProject{
+    text-align: center;
+    padding-top: 2%;
+    padding-right: 4%;
+    font-family: "open-sans", sans-serif;
+    color: #767676;
+    cursor: pointer;
+}
+
+.btnbacktotop{
+    margin-right: 7%;
+    margin-bottom: 2%;
+    text-align: right;
+}
+
+

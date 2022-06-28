@@ -8,7 +8,7 @@ import HomeSection5 from "../components/home/HomeSection5";
 
 export default function Home() {
     return (
-      <div>
+        <div>
         <HomeHeader />
         <Intro />
         <HomeSection2 />

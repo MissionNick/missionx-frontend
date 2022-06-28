@@ -49,6 +49,10 @@ font-family: 'open-sans';
 }
 
 .sectionFiveButtons{
+    width: 9vw;
+    height: 1.4vw;
+    font-size: 0.8vw;
+    border-radius: 6px;
     font-family: 'nunito';
     font-weight: 900;
     padding-top: 0.3%;
