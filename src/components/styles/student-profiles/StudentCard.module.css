@@ -16,10 +16,10 @@
   left: 6.5%;
   top: 9%;
   right: 8%;
-  height: 76%;
+  height: 84%;
   overflow: hidden;
   overflow-y: scroll;
-  padding: 1.5em 0;
+  padding: 1em 0;
 }
 
 .student_container::-webkit-scrollbar {
@@ -40,15 +40,7 @@
 .student_wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 4em 7.5625em;
-}
-
-.progress_heading {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 6.5em;
-  color: #6c6c6c;
-  font-family: "Nunito";
+  gap: 4em 0;
 }
 
 .student_item {
@@ -57,8 +49,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.5em;
-  width: 12.9375em;
-  height: 12.8125em;
+  width: 70%;
+  padding: 2.3em 0;
   display: flex;
   align-items: center;
   font-family: "open-sans";
@@ -67,17 +59,31 @@
   box-shadow: 0px 3px 6px #00000029;
 }
 
+@media screen and (max-width: 1720px) {
+  .student_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4em 0;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .student_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4em 0;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .student_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em 0;
+  }
+}
+
 @media screen and (max-width: 1000px) {
-  .student_item {
-    width: 10.9375em;
-    height: 10.8125em;
-    padding: 0.3em;
-  }
-
-  .student_container::-webkit-scrollbar {
-    width: 1.45em;
-  }
-
   .student_wrapper {
     display: flex;
     flex-direction: column;
