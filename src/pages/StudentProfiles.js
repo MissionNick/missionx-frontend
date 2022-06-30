@@ -1,12 +1,12 @@
 import Navbar from "../components/shared/Navbar";
-import TeacherSidebar from "../components/shared/TeacherSidebar";
+import Sidebar from "../components/shared/Sidebar";
 import StudentCard from "../components/StudentProfiles/StudentCard";
 
 export default function StudentProfiles() {
   return (
     <div>
       <Navbar />
-      <TeacherSidebar />
+      <Sidebar />
       <StudentCard />
     </div>
   );
