@@ -1,0 +1,87 @@
+@import url("https://use.typekit.net/wjd7ohr.css");
+
+.student_card {
+  background-color: #ffffff80;
+  position: absolute;
+  top: 7.95%;
+  left: 15%;
+  width: 82%;
+  height: 79%;
+  border-radius: 1.5em;
+  box-shadow: #00000029;
+}
+
+.student_container {
+  position: absolute;
+  left: 6.5%;
+  top: 9%;
+  right: 8%;
+  height: 76%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 1.5em 0;
+}
+
+.student_container::-webkit-scrollbar {
+  width: 1.5em;
+}
+
+.student_container::-webkit-scrollbar-thumb {
+  background: #43c0f6;
+  border-radius: 1em;
+  border: 0.2em solid #ffffffea;
+}
+
+.student_container::-webkit-scrollbar-track {
+  background: #ffffffbf;
+  border-radius: 1em;
+}
+
+.student_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4em 7.5625em;
+}
+
+.progress_heading {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 6.5em;
+  color: #6c6c6c;
+  font-family: "Nunito";
+}
+
+.student_item {
+  background-color: #ffffff;
+  border-radius: 1em;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5em;
+  width: 12.9375em;
+  height: 12.8125em;
+  display: flex;
+  align-items: center;
+  font-family: "open-sans";
+  font-weight: bold;
+  color: #707070;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+@media screen and (max-width: 1000px) {
+  .student_item {
+    width: 10.9375em;
+    height: 10.8125em;
+    padding: 0.3em;
+  }
+
+  .student_container::-webkit-scrollbar {
+    width: 1.45em;
+  }
+
+  .student_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
