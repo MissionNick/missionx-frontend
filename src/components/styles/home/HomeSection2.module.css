@@ -3,6 +3,7 @@
 }
 
 #tileHolder{
+    cursor: pointer;
     background-image: radial-gradient(#88DBFF, #42C0F6);
     border-radius:20px ;
     width: 19%;
@@ -96,8 +97,9 @@ padding-bottom: 2%;
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
   /* background-color: #ffffff; */
   border-radius: 50%;
   display: inline-block;
