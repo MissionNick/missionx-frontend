@@ -7,7 +7,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../components/shared/Fallback'
 import { errorHandler } from '../components/shared/ErrorHandler'
 
-import styles from "../components/styles/StudentProjectLibrary.module.css";
+import styles from "../components/styles/ProjectLibrary.module.css";
 
 
 function StudentProjectLibrary() {

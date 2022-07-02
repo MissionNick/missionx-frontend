@@ -1,9 +1,12 @@
 @import url('https://use.typekit.net/wjd7ohr.css');
 
+
+
 *{
 font-weight: 700;
 letter-spacing: 0.4px;
 }
+
 
 #studentHome {
     display: flex;
@@ -45,6 +48,7 @@ font-family: "open-sans", sans-serif;
     justify-content: space-between;
     height:fit-content;
     margin-right: 5%;
+    color:#767676;
 }
 
 #filter {
@@ -54,19 +58,7 @@ font-family: "open-sans", sans-serif;
     width: 25%;
     padding-left: 7%;
     color: #767676;
-    
-}
 
-filterTitle {
-    font-size: small;
-    color:#767676 ;
-    border-bottom-style: solid;
-    border-color: #767676;
-    padding-bottom: 3px;
-   }
-
-filterSectionEnd{
-    margin-bottom: 20%;
 }
 
 #projects{

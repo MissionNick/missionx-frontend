@@ -15,8 +15,6 @@ const userName = "Sample User".toUpperCase();
 console.log("Component Load : Navbar")
 
 
-
-
 function Navbar() {
     
     const { navBar, logo, navMenu, lang, user, navLeft, navRight } = styles;
