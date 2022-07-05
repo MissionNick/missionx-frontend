@@ -6,7 +6,12 @@ import { errorHandler } from '../shared/ErrorHandler'
 import styles from "../styles/ProjectLibrary.module.css"
 import Filter from "./Filter"
 import Content from "./Content"
-import ScrollToTop from '../shared/ScrollToTop'
+
+/* Pending Design Decision - Fixed Nav or Scroll with page
+    import ScrollToTop from '../shared/ScrollToTop'
+    <ScrollToTop /> added at top of return(betwen ErrorBoundary) 
+   
+*/
 
 console.log("Component Load : ProjectLibrary/Home ")
 
@@ -29,7 +34,7 @@ function Home() {
     return (
 
         <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-            <ScrollToTop />
+            
             <div id={pageTitle} >
                 <h1>PROJECTS</h1>
                 <p>Welcome to the project library. You can use the filter on the right to help you search for specific projects.</p>
