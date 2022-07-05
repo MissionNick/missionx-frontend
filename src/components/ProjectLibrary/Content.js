@@ -34,10 +34,10 @@ function Content({ subSelect }) {
     return (
         <>
             <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-            <div id={styles.studentContent}>
+                <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
-                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
-            </div>
+                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />            
+                </div>
             </ErrorBoundary>
         </>
     )
