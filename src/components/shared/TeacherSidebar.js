@@ -1,17 +1,25 @@
-import styles from "../styles/sidebar/TeacherSidebar.module.css";
+import styles from "../styles/sidebar/Sidebar.module.css";
 import { Link } from "react-router-dom";
 import placeHolder from "../../assets/images/sidebar/placeholder.png";
 import sidebarClose from "../../assets/images/sidebar/sidebarIcon.png";
 import sidebarClosed from "../../assets/images/sidebar/sidebarIconRight.png";
 import { useState } from "react";
-import progress from "../../assets/images/sidebar/progresslight.png";
-import submit from "../../assets/images/sidebar/submit.png";
-import library from "../../assets/images/sidebar/library.png";
+import progress from "../../assets/images/sidebar/progressIcon.png";
+import submit from "../../assets/images/sidebar/submitIcon.png";
+import library from "../../assets/images/sidebar/libraryIcon.png";
 import user from "../../assets/images/sidebar/userIcon.png";
 import settings from "../../assets/images/sidebar/settingsIcon.png";
 import signout from "../../assets/images/sidebar/signoutIcon.png";
 import graduate from "../../assets/images/sidebar/graduateIcon.png";
 import help from "../../assets/images/sidebar/helpIcon.png";
+import progressLarge from "../../assets/images/sidebar/progressIconLarge.png";
+import submitLarge from "../../assets/images/sidebar/submitIconLarge.png";
+import libraryLarge from "../../assets/images/sidebar/libraryIconLarge.png";
+import userLarge from "../../assets/images/sidebar/userIconLarge.png";
+import settingsLarge from "../../assets/images/sidebar/settingsIconLarge.png";
+import signoutLarge from "../../assets/images/sidebar/signoutIconLarge.png";
+import graduateLarge from "../../assets/images/sidebar/graduateIconLarge.png";
+import helpLarge from "../../assets/images/sidebar/helpIconLarge.png";
 
 export default function TeacherSidebar() {
   const [sidebar, setSidebar] = useState(true);
@@ -48,7 +56,7 @@ export default function TeacherSidebar() {
                 }
               >
                 <img
-                  src={progress}
+                  src={sidebar ? progress : progressLarge}
                   alt="nav-icon"
                   className={
                     sidebar ? styles.text_icon : styles.text_icon_closed
@@ -73,7 +81,7 @@ export default function TeacherSidebar() {
                 }
               >
                 <img
-                  src={graduate}
+                  src={sidebar ? graduate : graduateLarge}
                   alt="nav-icon"
                   className={
                     sidebar ? styles.text_icon : styles.text_icon_closed
@@ -98,7 +106,7 @@ export default function TeacherSidebar() {
                 }
               >
                 <img
-                  src={help}
+                  src={sidebar ? help : helpLarge}
                   alt="nav-icon"
                   className={
                     sidebar ? styles.text_icon : styles.text_icon_closed
@@ -123,7 +131,7 @@ export default function TeacherSidebar() {
                 }
               >
                 <img
-                  src={submit}
+                  src={sidebar ? submit : submitLarge}
                   alt="nav-icon"
                   className={
                     sidebar ? styles.text_icon : styles.text_icon_closed
@@ -140,7 +148,7 @@ export default function TeacherSidebar() {
             </li>
             <li className={styles.sidebar_nav_text}>
               <Link
-                to="/project-library"
+                to="/StudentProjectLibrary"
                 id={
                   window.location.pathname === "/project-library"
                     ? styles.active
@@ -148,7 +156,7 @@ export default function TeacherSidebar() {
                 }
               >
                 <img
-                  src={library}
+                  src={sidebar ? library : libraryLarge}
                   alt="nav-icon"
                   className={
                     sidebar ? styles.text_icon : styles.text_icon_closed
@@ -165,7 +173,11 @@ export default function TeacherSidebar() {
             </li>
           </div>
 
-          <div className={styles.sidebar_bottom}>
+          <div
+            className={
+              sidebar ? styles.sidebar_bottom : styles.sidebar_bottom_closed
+            }
+          >
             <li
               className={
                 sidebar
@@ -173,19 +185,14 @@ export default function TeacherSidebar() {
                   : styles.sidebar_nav_text_bottom_closed
               }
             >
-              <Link
-                to="/profile"
-                id={
-                  window.location.pathname === "/profile" ? styles.active : null
-                }
-              >
+              <Link to="/profile">
                 <div
                   className={
                     sidebar ? styles.bottom_items : styles.bottom_items_closed
                   }
                 >
                   <img
-                    src={user}
+                    src={sidebar ? user : userLarge}
                     alt="nav-icon"
                     className={
                       sidebar ? styles.text_icon : styles.text_icon_closed
@@ -208,21 +215,14 @@ export default function TeacherSidebar() {
                   : styles.sidebar_nav_text_bottom_closed
               }
             >
-              <Link
-                to="/settings"
-                id={
-                  window.location.pathname === "/settings"
-                    ? styles.active
-                    : null
-                }
-              >
+              <Link to="/settings">
                 <div
                   className={
                     sidebar ? styles.bottom_items : styles.bottom_items_closed
                   }
                 >
                   <img
-                    src={settings}
+                    src={sidebar ? settings : settingsLarge}
                     alt="nav-icon"
                     className={
                       sidebar ? styles.text_icon : styles.text_icon_closed
@@ -245,19 +245,14 @@ export default function TeacherSidebar() {
                   : styles.sidebar_nav_text_bottom_closed
               }
             >
-              <Link
-                to="/log-out"
-                id={
-                  window.location.pathname === "/log-out" ? styles.active : null
-                }
-              >
+              <Link to="/log-out">
                 <div
                   className={
                     sidebar ? styles.bottom_items : styles.bottom_items_closed
                   }
                 >
                   <img
-                    src={signout}
+                    src={sidebar ? signout : signoutLarge}
                     alt="nav-icon"
                     className={
                       sidebar ? styles.text_icon : styles.text_icon_closed
