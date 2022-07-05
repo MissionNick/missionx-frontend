@@ -4,8 +4,8 @@ import nzFlag from "../../assets/images/NZ_Flag.png";
 import logosrc from "../../assets/images/Star_Logo_07-2.png";
 import { Link } from "react-router-dom";
 import { ErrorBoundary } from 'react-error-boundary'
-import { Fallback } from './Fallback'
-import { errorHandler } from './ErrorHandler'
+import { Fallback } from '../shared/Fallback'
+import { errorHandler } from '../shared/ErrorHandler'
 
 // Using Const here until user state /session details are implemented.
 
@@ -27,9 +27,9 @@ function Navbar() {
                     </div>
 
                     <div id={navMenu}>
-                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">HOME</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/StudentProjectLibrary">HOME</Link>
                         <Link style={{ textDecoration: 'none', color: 'white' }} to="/StudentProjectLibrary">PROJECTS</Link>
-                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/MockTeacher">TEACHERS</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/StudentProjectLibrary">TEACHERS</Link>
                     </div>
                 
                     <div id={navRight}>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/Filter-group.module.css";
+import styles from "../styles/ProjectLibrary/Filter-group.module.css";
 
 export default function FilterGroup({ heading, filters, doSomethingAfterClick } ) {
     

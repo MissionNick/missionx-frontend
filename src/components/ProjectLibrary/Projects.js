@@ -1,9 +1,9 @@
-import styles from "../styles/ProjectLibrary.module.css"
 import ProjectsDB from "./studentprojectdb.json"
 import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
 
+import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
 console.log("Component Load : ProjectLibrary/Projects ");
 
