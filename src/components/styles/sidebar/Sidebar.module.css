@@ -127,7 +127,7 @@
 /* collapsed sidebar */
 .sidebar_nav_menu_closed {
   background-color: #43c0f6;
-  width: 6.5%;
+  width: 7%;
   height: 89vh;
 }
 .sidebar_bottom_closed {
@@ -149,4 +149,19 @@
 .sidebar_nav_text_bottom_closed {
   margin-left: 45%;
   list-style: none;
+}
+
+@media screen and (max-width: 1845px) {
+  .sidebar_nav_text {
+    font-size: 0.775em;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .sidebar_nav_text {
+    font-size: 0.575em;
+  }
+  .sidebar_nav_text_bottom {
+    font-size: 0.45em;
+  }
 }
