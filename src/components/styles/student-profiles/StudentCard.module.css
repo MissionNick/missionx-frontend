@@ -1,42 +1,5 @@
 @import url("https://use.typekit.net/wjd7ohr.css");
 
-.student_card {
-  background-color: #ffffff80;
-  position: absolute;
-  top: 7.95%;
-  left: 15%;
-  width: 82%;
-  height: 79%;
-  border-radius: 1.5em;
-  box-shadow: #00000029;
-}
-
-.student_container {
-  position: absolute;
-  left: 6.5%;
-  top: 9%;
-  right: 8%;
-  height: 84%;
-  overflow: hidden;
-  overflow-y: scroll;
-  padding: 1em 0;
-}
-
-.student_container::-webkit-scrollbar {
-  width: 1.5em;
-}
-
-.student_container::-webkit-scrollbar-thumb {
-  background: #43c0f6;
-  border-radius: 1em;
-  border: 0.2em solid #ffffffea;
-}
-
-.student_container::-webkit-scrollbar-track {
-  background: #ffffffbf;
-  border-radius: 1em;
-}
-
 .student_wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
