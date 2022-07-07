@@ -1,3 +1,4 @@
+import ContentScrollCard from "../components/shared/ContentScrollCard";
 import Navbar from "../components/shared/Navbar";
 import SecondaryFooter from "../components/shared/SecondaryFooter";
 import TeacherSidebar from "../components/shared/TeacherSidebar";
@@ -8,7 +9,9 @@ export default function StudentProfiles() {
     <div>
       <Navbar />
       <TeacherSidebar />
-      <StudentCard />
+      <ContentScrollCard>
+        <StudentCard />
+      </ContentScrollCard>
       <SecondaryFooter />
     </div>
   );
