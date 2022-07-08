@@ -13,7 +13,7 @@ export default function Header() {
       </div>
       <div id={styles.headerNav}>
         <Link style={{ textDecoration: "none", color: "white" }} to="/">HOME</Link>
-        <Link style={{ textDecoration: "none", color: "white" }} to="/StudentProjectLibrary">PROJECTS</Link>
+        <Link style={{ textDecoration: "none", color: "white" }} to="/StudentProjectLibrary">FEATURES</Link>
         <Link style={{ textDecoration: "none", color: "white" }} to="/MockTeacher">TEACHERS</Link>
       </div>  
       <div id={styles.loginLanguage}>
