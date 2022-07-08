@@ -108,6 +108,7 @@ padding-bottom: 2%;
 
 @media screen and (max-width: 768px) {
     #sectionTwo{
+        width: 100%;
         flex-direction: column;
     }
     #sectionTwoLeft, #sectionTwoRight {
