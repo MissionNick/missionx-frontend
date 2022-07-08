@@ -155,6 +155,7 @@ export default function TeacherSidebar() {
                     : null
                 }
               >
+                {/* image */}
                 <img
                   src={sidebar ? library : libraryLarge}
                   alt="nav-icon"
