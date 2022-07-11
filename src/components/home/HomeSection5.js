@@ -1,7 +1,7 @@
 import styles from "../styles/home/HomeSection5.module.css";
 import teacher from "../../assets/images/home/Teacher.png";
 
-export default function HomeSection5() {
+export default function HomeSection5({ setIsModalOpen, setIsSignUp }) {
   return (
     <div id={styles.sectionFive}>
       <div id={styles.sectionFiveLeft}>
@@ -22,6 +22,10 @@ export default function HomeSection5() {
               ENQUIRE NOW
             </button>
             <button
+              onClick={() => {
+                setIsModalOpen(true);
+                setIsSignUp(true);
+              }}
               className={styles.sectionFiveButtons}
               id={styles.sectionFiveSignup}
             >

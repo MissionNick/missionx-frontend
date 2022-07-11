@@ -6,8 +6,8 @@ import userCircle from "../../assets/images/User_circle.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Header() {
-  const [extendNav, setExtendNav] = useState(false)
+export default function Header({ setIsModalOpen }) {
+  const [extendNav, setExtendNav] = useState(false);
   return (
     <div id={styles.headerContainer}>
       <div id={styles.headerNormal}>
@@ -55,7 +55,13 @@ export default function Header() {
                 src={userCircle}
                 alt="User Icon"
               />
-              <div>REGISTER | LOGIN</div>
+              <div
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
+              >
+                REGISTER | LOGIN
+              </div>
             </div>
           </div>
         </div>
