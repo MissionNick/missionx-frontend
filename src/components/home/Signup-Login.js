@@ -82,7 +82,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                   />
                 )}
               </div>
-              <button className={styles.submitButton}>SIGN UP</button>
+              <button className={styles.submitButton}>{isSignUp? 'SIGN UP' : 'LOG IN'}</button>
             </div>
           </div>
         </div>
