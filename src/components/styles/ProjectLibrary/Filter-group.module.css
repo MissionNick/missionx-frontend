@@ -1,0 +1,11 @@
+filterTitle {
+    font-size: small;
+    color: #767676;
+    border-bottom-style: solid;
+    border-color: #767676;
+    padding-bottom: 3px;
+}
+
+filterSectionEnd {
+    margin-bottom: 20%;
+}

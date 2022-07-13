@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
 
-import styles from "../styles/StudentProjectLibrary.module.css"
+import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
 import PageOptions from "./PageOptions"
 import StudentProjects from "./Projects";
@@ -34,10 +34,10 @@ function Content({ subSelect }) {
     return (
         <>
             <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-            <div id={styles.studentContent}>
+                <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
-                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />
-            </div>
+                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />            
+                </div>
             </ErrorBoundary>
         </>
     )
