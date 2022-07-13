@@ -1,9 +1,9 @@
-import styles from "../styles/StudentProjectLibrary.module.css"
 import ProjectsDB from "./studentprojectdb.json"
 import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
 
+import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
 console.log("Component Load : ProjectLibrary/Projects ");
 
@@ -33,7 +33,7 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
                         const projectimg = require('../../assets/images/projects/' + imgsrc);
                         return (
                             <div className={styles.showProject}>
-                                <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={projectimg} alt="image" />
+                                <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={projectimg} alt="" />
                                 <p>{label}</p>
                                 <p>{level}|{type}</p>
                             </div>

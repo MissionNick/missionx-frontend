@@ -5,6 +5,7 @@ font-weight: 700;
 letter-spacing: 0.4px;
 }
 
+
 #studentHome {
     display: flex;
     flex-direction: row ;
@@ -45,6 +46,7 @@ font-family: "open-sans", sans-serif;
     justify-content: space-between;
     height:fit-content;
     margin-right: 5%;
+    color:#767676;
 }
 
 #filter {
@@ -54,19 +56,7 @@ font-family: "open-sans", sans-serif;
     width: 25%;
     padding-left: 7%;
     color: #767676;
-    
-}
 
-filterTitle {
-    font-size: small;
-    color:#767676 ;
-    border-bottom-style: solid;
-    border-color: #767676;
-    padding-bottom: 3px;
-   }
-
-filterSectionEnd{
-    margin-bottom: 20%;
 }
 
 #projects{
@@ -82,11 +72,4 @@ filterSectionEnd{
     color: #767676;
     cursor: pointer;
 }
-
-.btnbacktotop{
-    margin-right: 7%;
-    margin-bottom: 2%;
-    text-align: right;
-}
-
 
