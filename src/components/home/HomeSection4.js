@@ -195,7 +195,7 @@ the Fourth Industrial Revolution. (IR4.0)`,
                 return (
                   <>
                     <div className={styles.star}>
-                      <img src={star} alt="star" />
+                      <img src={star} id={styles.starImage} alt="star" />
                     </div>
                     <div className={styles.point}>
                       <div className={styles.pointTitle}>{item.title}</div>
