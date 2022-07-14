@@ -24,21 +24,22 @@ export default function StudentProgress() {
               </div>
             </div>
             <div className={styles.progressContainerRight}>
-              <p className={styles.progressBtn}>1</p>
-              <p className={styles.progressBtn}>2</p>
-              <p className={styles.progressBtn}>3</p>
-              <p className={styles.progressBtn}>4</p>
-              <p className={styles.progressBtn}>5</p>
-              <p className={styles.progressBtn}>6</p>
-              <p className={styles.progressBtn}>7</p>
-              <p className={styles.progressBtn}>8</p>
-              <p className={styles.progressBtn}>9</p>
-              <p className={styles.progressBtn}>10</p>
-              <p className={styles.progressBtn}>11</p>
-              <p className={styles.progressBtn}>12</p>
-              <p className={styles.progressBtn}>13</p>
-              <p className={styles.progressBtn}>14</p>
-              <p className={styles.progressBtn}>15</p>
+              <div className={styles.progressBtn}>1</div>
+              {/*id={val.Total === 1 ? styles.active : null}*/}
+              <div className={styles.progressBtn}>2</div>
+              <div className={styles.progressBtn}>3</div>
+              <div className={styles.progressBtn}>4</div>
+              <div className={styles.progressBtn}>5</div>
+              <div className={styles.progressBtn}>6</div>
+              <div className={styles.progressBtn}>7</div>
+              <div className={styles.progressBtn}>8</div>
+              <div className={styles.progressBtn}>9</div>
+              <div className={styles.progressBtn}>10</div>
+              <div className={styles.progressBtn}>11</div>
+              <div className={styles.progressBtn}>12</div>
+              <div className={styles.progressBtn}>13</div>
+              <div className={styles.progressBtn}>14</div>
+              <div className={styles.progressBtn}>15</div>
             </div>
           </div>
         );
