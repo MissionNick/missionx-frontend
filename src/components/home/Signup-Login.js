@@ -33,7 +33,13 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
         name: stuName,
         email: stuEmail,
         password: stuPass,
-      }).then((res) => { console.log(res) }).catch((err)=>{console.log(err)})
+      }).then((res) => {
+        console.log(res);
+        clearField();
+      }).catch((err) => {
+        console.log(err);
+        clearField();
+      })
     } else {
       // console.log("Student login button", stuEmail, stuPass);
       axios
@@ -43,9 +49,11 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
         })
         .then((res) => {
           console.log(res);
+          clearField();
         })
         .catch((err) => {
           console.log(err);
+          clearField();
         });
     }
   }
@@ -61,9 +69,11 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
         })
         .then((res) => {
           console.log(res);
+          clearField();
         })
         .catch((err) => {
           console.log(err);
+          clearField();
         });
     } else {
       // console.log("Teacher login button", teachEmail, teachPass);
@@ -74,9 +84,11 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
         })
         .then((res) => {
           console.log(res);
+          clearField();
         })
         .catch((err) => {
           console.log(err);
+          clearField();
         });
     }
   }
@@ -152,7 +164,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                 )}
               </div>
               <button onClick={() => student()} className={styles.submitButton}>
-                SIGN UP
+                {isSignUp ? "SIGN UP" : "LOG IN"}
               </button>
             </div>
           </div>
@@ -197,6 +209,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                     }}
                     placeholder="Full Name"
                     className={styles.field}
+                    value={teachName}
                   />
                 )}
                 <input
@@ -205,6 +218,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                   }}
                   placeholder="Email Address"
                   className={styles.field}
+                  value={teachEmail}
                 />
                 <input
                   onChange={(e) => {
@@ -213,6 +227,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                   type="password"
                   placeholder="Password"
                   className={styles.field}
+                  value={teachPass}
                 />
                 {isSignUp && (
                   <input
@@ -222,6 +237,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
                     type="password"
                     placeholder="Confirm Password"
                     className={styles.field}
+                    value={teachConfirm}
                   />
                 )}
               </div>
