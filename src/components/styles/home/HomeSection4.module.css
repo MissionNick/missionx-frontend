@@ -25,7 +25,7 @@
 #buttons {
   padding-top: 0.3%;
   width: 20%;
-  font-size: calc(10px + (16 - 10) * ((100vw - 769px) / (2560 - 769)));
+  font-size: calc(9px + (16 - 9) * ((100vw - 769px) / (2560 - 769)));
   font-weight: 900;
   background-color: white;
   border: #43c0f6 solid 2px;
@@ -37,7 +37,7 @@
 #buttonsActive{
   padding-top: 0.3%;
   width: 20%;
-  font-size: calc(10px + (16 - 10) * ((100vw - 769px) / (2560 - 769)));
+  font-size: calc(9px + (16 - 9) * ((100vw - 769px) / (2560 - 769)));
   font-weight: 800;
   background-color: #EFEFF1;
   border: #EFEFF1 solid 2px;
@@ -97,7 +97,7 @@
 }
 
 .point{
-    width: 96%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     font-family: 'open-sans';
@@ -143,6 +143,6 @@
     width: 5%;
   }
   .point{
-    width: 95%;
+    width: 94%;
   }
 }

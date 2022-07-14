@@ -1,4 +1,4 @@
-import HomeHeader from "../components/home/HomeHeader"
+import Navbar from "../components/shared/Navbar"
 import Footer from "../components/shared/Footer"
 import Intro from "../components/home/Intro"
 import HomeSection2 from "../components/home/HomeSection2";
@@ -13,7 +13,7 @@ export default function Home() {
     const [isSignUp, setIsSignUp] = useState(false);
     return (
       <div>
-        <HomeHeader setIsModalOpen={setIsModalOpen} />
+        <Navbar setIsModalOpen={setIsModalOpen} />
         <Intro setIsModalOpen={setIsModalOpen} setIsSignUp={setIsSignUp} />
         <HomeSection2 />
         <HomeSection3 />
