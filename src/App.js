@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/StudentProjectLibrary" element={<StudentProjectLibrary />} />
+          <Route path="/student-projectLibrary" element={<StudentProjectLibrary />} />
           {/* <Route path="/MockTeacher" element={<MockTeacher />} /> */}
           <Route path="/progress-tracker" element={<ProgressTracker />} />
           <Route path="/student-profiles" element={<StudentProfiles />} />
