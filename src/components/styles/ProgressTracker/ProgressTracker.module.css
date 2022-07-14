@@ -1,0 +1,24 @@
+@import url("https://use.typekit.net/wjd7ohr.css");
+
+.exportContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 3em;
+}
+
+.title {
+  font-family: "Nunito";
+  font-weight: 900;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #6c6c6c;
+}
+
+.exportTitle {
+  font-family: "Nunito";
+  font-weight: 800;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  color: #6c6c6c;
+}
