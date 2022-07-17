@@ -23,7 +23,7 @@ function Home() {
     
     // Moved to ScrollToTop const scrollToTop = useRef()
     
-    const [subSelect, setSubSelect] = useState(3);
+    const [subSelect, setSubSelect] = useState(1);
     const updateSubSelect = (val) => {
         console.log('Changed subscription ', val);
         setSubSelect(val);
@@ -34,17 +34,14 @@ function Home() {
     return (
 
         <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-            
             <div id={pageTitle} >
                 <h1>PROJECTS</h1>
                 <p>Welcome to the project library. You can use the filter on the right to help you search for specific projects.</p>
                 </div>
-
             <div id={studentHome}>
                 <Filter subSelect={subSelect} updateSubSelect={updateSubSelect} />
                 <Content subSelect={subSelect} />
             </div>
-            
         </ErrorBoundary>    
     )
 }

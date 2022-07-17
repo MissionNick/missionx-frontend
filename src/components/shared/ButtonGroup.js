@@ -18,7 +18,7 @@ const ButtonGroup = ({buttons, doSomethingAfterClick }) => {
         <button
           key={i}
           name={buttonLabel}
-          value={buttonLabel}
+          value={i}
           onClick={(event) => handleClick(event, i)}
           className={i === clickedId ?styles.active:styles.customButton}
         >

@@ -3,6 +3,7 @@ import studentImage from "../../assets/images/home/StudentLogIn.png";
 import teacherImage from "../../assets/images/home/TeachLogIn.png";
 import { useState } from "react";
 import axios from "axios";
+import { Fallback } from "../shared/Fallback";
 
 export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
   const [stuName, setStuName] = useState('');

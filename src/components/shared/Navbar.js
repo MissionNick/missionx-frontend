@@ -32,7 +32,7 @@ export default function Header({ setIsModalOpen }) {
           <Link
             id={styles.headerNavLinks}
             style={{ textDecoration: "none", color: "white" }}
-            to="/"
+            to="/Teacher"
           >
             TEACHERS
           </Link>
