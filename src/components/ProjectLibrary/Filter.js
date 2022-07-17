@@ -4,7 +4,7 @@ import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
 
 import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
-import FilterGroup from "../ProjectLibrary/FilterGroup"
+import FilterGroup from "./FilterGroup"
 
 console.log("Component Load : ProjectLibrary/Filter ")
 

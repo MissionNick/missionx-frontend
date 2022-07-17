@@ -6,7 +6,7 @@ import { errorHandler } from '../shared/ErrorHandler'
 import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
 import PageOptions from "./PageOptions"
-import StudentProjects from "./Projects";
+import Projects from "./Projects";
 
 console.log("Component Load : ProjectLibrary/Content ")
 
@@ -15,16 +15,16 @@ console.log("Component Load : ProjectLibrary/Content ")
 function Content({ subSelect }) {
 
 
-    const [levelSelect, setLevelSelect] = useState("BEGINNER");
+    const [levelSelect, setLevelSelect] = useState(0);
     const handleLevelClick = (e) => {
-        console.log('Changed ', e.target.value);
+        console.log('Changed ', e.target.name);
         setLevelSelect(e.target.value);
     }
 
-    const [displayNumber, setDiplayNumber] = useState(25);
+    const [displayNumber, setDiplayNumber] = useState();
     const handleDisplayNumberClick = (e) => {
-        console.log('Changed ',e.target.value);
-        setDiplayNumber(e.target.value);
+        console.log('Changed ',e.target.name);
+        setDiplayNumber(e.target.name);
     }
 
     const [recordIndex, setRecordIndex] = useState(0);
@@ -36,7 +36,7 @@ function Content({ subSelect }) {
             <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
                 <div id={styles.studentContent}>
                 <PageOptions displayNumber={displayNumber} handleDisplayNumberClick={handleDisplayNumberClick} levelSelect={levelSelect} handleLevelClick={handleLevelClick} />
-                <StudentProjects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />            
+                <Projects subSelect={subSelect} displayNumber={displayNumber} recordIndex={recordIndex} nextPage={nextPage} levelSelect={levelSelect} />            
                 </div>
             </ErrorBoundary>
         </>
