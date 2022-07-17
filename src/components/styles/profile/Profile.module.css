@@ -1,0 +1,32 @@
+/* Structure */
+.frame {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin:10%;
+    justify-content:space-between;
+    background-color:red;
+    }
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width:20%;
+}
+
+.profile {
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+    border-style: solid;
+    border-radius: 2ch;
+    background-color: white;
+}
+
+/* Skinning */
+@import url('https://use.typekit.net/wjd7ohr.css');
+
+* {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}

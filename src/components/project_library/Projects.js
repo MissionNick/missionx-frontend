@@ -2,15 +2,13 @@ import { FilterProject } from './FilterProject'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
-import parse from 'html-react-parser';
-//import { renderMarkup } from '../shared/renderMarkup'
-//import ProjectsDB from "./studentprojectdb.json" replaced by mysql
-//import Httpreq  from './httpreq'  TODO refatcor
 
 import axios from 'axios'
 import { useEffect, useState } from "react";
 
 import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
+
+const student_id = 1; // will be replaced with user session.
 
 
 console.log("Component Load : ProjectLibrary/Projects ");
@@ -29,7 +27,9 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
     function ShowProjects() {
         const [projectList, setProjectList] = useState([]);
         useEffect(() => {
-            axios.post('http://localhost:4000/api/projects/student')
+            axios.post('http://localhost:4000/api/projects/student', {
+                student_id:student_id
+            })
                 .then((response) => {
                     const newList = FilterProject(response.data, displayNumber, recordIndex, nextPage, levelSelect, subSelect);
                     setProjectList(newList);
