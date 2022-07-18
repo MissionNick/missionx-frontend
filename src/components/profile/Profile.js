@@ -1,10 +1,10 @@
 import { fontSize } from '@mui/system'
 import styles from '../styles/profile/Profile.module.css'
+import dateFormat from '../shared/DateFormat'
 
 export default function Profile({ profile }) {
 
-    const dob = profile.date_of_birth;
-    console.log(dob)
+    const dob = dateFormat(profile.date_of_birth);
     return (
         
         <div className={styles.profile}>
@@ -13,7 +13,7 @@ export default function Profile({ profile }) {
             <input type="text" name="teacher" value={profile.school} />
             </label>
             <label>Teacher
-            <input type="text" name="teacher" value={profile.teacher} />
+            <input type="text" name="teacher" value={profile.teacher_name} />
             </label>
             <label>Course
             <input type="text" name="course" value={profile.course} />
