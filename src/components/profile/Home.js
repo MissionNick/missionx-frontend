@@ -5,6 +5,8 @@ import { errorHandler } from '../shared/ErrorHandler'
 import axios from 'axios'
 import styles from '../styles/profile/Profile.module.css'
 import Profile from '../profile/Profile'
+import { style } from '@mui/system'
+import BackToProject from './BackToProject'
 
 
 const student_id = 1; // will be replaced with user session.
@@ -18,6 +20,7 @@ export default function Home() {
     return (
         <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
             <ShowProfile />
+            <BackToProject />
         </ErrorBoundary>
     
     )
@@ -43,12 +46,11 @@ export default function Home() {
         return (
             <div className={styles.frame}>
                 <div className={styles.menu}>
-                    <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={profile.profilepic} alt="image unavailable"  className="img-responsive" />
-                    <button>EDIT PROFILE</button>
-                    <button>CHANGE PHOTO</button>
+                    <img className={styles.profilepic} src={profile.profilepic} alt="image unavailable"  />
+                    <button className={styles.btn_edit}>EDIT PROFILE</button>
+                    <button className={styles.btn_edit}>CHANGE PHOTO</button>
                 </div>
-                <Profile profile={profile} />
-                
+                <Profile profile={profile} />    
             </div>
         )
 
