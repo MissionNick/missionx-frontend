@@ -16,12 +16,12 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
   const [teachConfirm, setTeachConfirm] = useState("");
   
   function clearField() {
-    setStuName("");
-    setStuEmail("");
+    // setStuName("");
+    // setStuEmail("");
     setStuPass("");
     setStuConfirm("");
-    setTeachName("");
-    setTeachEmail("");
+    // setTeachName("");
+    // setTeachEmail("");
     setTeachPass("");
     setTeachConfirm("");
 }
@@ -33,6 +33,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
         name: stuName,
         email: stuEmail,
         password: stuPass,
+        confirm: stuConfirm,
       }).then((res) => {
         console.log(res);
         clearField();
@@ -66,6 +67,7 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen }) {
           name: teachName,
           email: teachEmail,
           password: teachPass,
+          confirm: teachConfirm,
         })
         .then((res) => {
           console.log(res);
