@@ -27,9 +27,7 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
     function ShowProjects() {
         const [projectList, setProjectList] = useState([]);
         useEffect(() => {
-            axios.post('http://localhost:4000/api/projects/student', {
-                student_id:student_id
-            })
+            axios.post('http://localhost:4000/api/projects/student', {student_id:student_id})
                 .then((response) => {
                     const newList = FilterProject(response.data, displayNumber, recordIndex, nextPage, levelSelect, subSelect);
                     setProjectList(newList);

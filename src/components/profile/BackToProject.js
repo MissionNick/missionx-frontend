@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from '../styles/profile/Profile.module.css';
-import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 
 export default function BackToProject() {
-
+    /* Investigate alternative to <LINK>
+    import { useNavigate } from "react-router-dom";
     const navigate = useNavigate(); 
 
     const routeChange = () => { 
@@ -13,12 +13,17 @@ export default function BackToProject() {
         console.log(path)
         navigate(path);
         
-    }
-    
+    } 
+    */ 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }} >
-            <button  onclick={routeChange} className={styles.btn_back} >BACK TO PROJECTS</button>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: '#EEEEEE' }} >
+            
+            <Link to="/student">
+                <button
+                    className={styles.btn_back} 
+                    >BACK TO PROJECTS</button>
+            </Link>
         </div>
     )
 }
