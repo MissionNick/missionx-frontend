@@ -55,6 +55,7 @@ I didn't know what else to call it*/
     font-size: 10px;
     display: flex;
     justify-content: flex-end;
+    color: white;
 }
 
 .flag{
