@@ -7,7 +7,7 @@ import styles from '../styles/profile/Profile.module.css'
 import Profile from '../profile/Profile'
 import BackToProject from './BackToProject'
 
-
+const {frame,menu,profilepic,btn_edit } = styles;
 const student_id = 1; // will be replaced with user session.
 
 //import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
@@ -43,11 +43,11 @@ export default function Home() {
         
     
         return (
-            <div className={styles.frame}>
-                <div className={styles.menu}>
-                    <img className={styles.profilepic} src={profile.profilepic} alt="image unavailable"  />
-                    <button className={styles.btn_edit}>EDIT PROFILE</button>
-                    <button className={styles.btn_edit}>CHANGE PHOTO</button>
+            <div className={frame}>
+                <div className={menu}>
+                    <img className={profilepic} src={profile.profilepic} alt="image unavailable"  />
+                    <button className={btn_edit}>EDIT PROFILE</button>
+                    <button className={btn_edit}>CHANGE PHOTO</button>
                 </div>
                 <Profile profile={profile} />
                 <BackToProject />

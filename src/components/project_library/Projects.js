@@ -2,13 +2,16 @@ import { FilterProject } from './FilterProject'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Fallback } from '../shared/Fallback'
 import { errorHandler } from '../shared/ErrorHandler'
+import splitString from '../shared/SplitString'
 
 import axios from 'axios'
 import { useEffect, useState } from "react";
 
 import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
-const student_id = 1; // will be replaced with user session.
+const {showProject,pic,projName,projProps} = styles;
+
+const req_session = 1; // will be replaced with user session.
 
 
 console.log("Component Load : ProjectLibrary/Projects ");
@@ -27,7 +30,7 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
     function ShowProjects() {
         const [projectList, setProjectList] = useState([]);
         useEffect(() => {
-            axios.post('http://localhost:4000/api/projects/student', {student_id:student_id})
+            axios.post('http://localhost:4000/api/projects/student', {student_id:req_session})
                 .then((response) => {
                     const newList = FilterProject(response.data, displayNumber, recordIndex, nextPage, levelSelect, subSelect);
                     setProjectList(newList);
@@ -43,12 +46,13 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
         return (
             <>{
                 projectList.map(project => {
-                    const { name, projectpic, course,activity} = project;
+                    const { Name, projectpic, course, activity } = project;
+                    const pname = splitString(Name," - "); //remove project ## - 
                     return (
-                        <div className={styles.showProject}>
-                            <img style={{ verticalAlign: 'middle', paddingRight: '3%' }} src={projectpic} alt="image unavailable"  className="img-responsive" />
-                            <p>{name}</p>
-                            <p>{course}|{activity}</p>
+                        <div className={showProject}>
+                            <img className={pic} src={projectpic} alt="image unavailable" />
+                            <p className={projName}>{pname}</p>
+                            <p className={projProps}>{course.toUpperCase()} |{activity}</p>
                         </div>
                     )
                 })

@@ -55,7 +55,7 @@ export default function Header({ setIsModalOpen }) {
                 src={userCircle}
                 alt="User Icon"
               />
-              <div
+              <div style={{ color: "white"}}
                 onClick={() => {
                   setIsModalOpen(true);
                 }}

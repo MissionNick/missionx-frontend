@@ -1,9 +1,4 @@
-@import url('https://use.typekit.net/wjd7ohr.css');
-
-*{
-font-weight: 700;
-letter-spacing: 0.4px;
-}
+/* Structure */
 
 
 #studentHome {
@@ -53,7 +48,7 @@ font-family: "open-sans", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    width: 25%;
+    width: 15%;
     padding-left: 7%;
     color: #767676;
 
@@ -65,11 +60,57 @@ font-family: "open-sans", sans-serif;
 }
 
 .showProject{
+    align-items: center;
     text-align: center;
     padding-top: 2%;
     padding-right: 4%;
-    font-family: "open-sans", sans-serif;
+    font-family: open-sans, sans-serif;
     color: #767676;
     cursor: pointer;
 }
 
+.pic {
+    border-radius: 3ch;
+    border-style:outset;
+    border-color:#C7C5C5;
+    border-width: 1px;
+    resize: both;
+    width: 300px;
+    height: 220px;
+    max-width: 300px;
+    max-height: 220px;
+    align-items: center;
+}
+
+/* Skinning */
+
+@import url('https://use.typekit.net/wjd7ohr.css');
+
+* {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    font-size:16px;
+    font-family:'open-sans';
+}
+
+.title{
+    font-family:'nunito';
+    font-size:2.5rem;
+}
+
+.intro{
+    font-size:1.3rem;
+}
+
+.projName{
+    font-family: 'nunito';
+    font-size: 1.5rem;
+    color:#707070;
+    font-weight: bolder;
+}
+
+.projProps{
+font-family: 'nunito';
+    font-size: 1.5rem;
+    color: #767676;
+}

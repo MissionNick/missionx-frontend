@@ -21,7 +21,7 @@ function Content({ subSelect }) {
         setLevelSelect(e.target.value);
     }
 
-    const [displayNumber, setDiplayNumber] = useState();
+    const [displayNumber, setDiplayNumber] = useState(5);
     const handleDisplayNumberClick = (e) => {
         console.log('Changed ',e.target.name);
         setDiplayNumber(e.target.name);

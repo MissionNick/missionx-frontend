@@ -2,7 +2,7 @@
     width: max-content;
     height: 21px;
     background: whitesmoke;
-    color: black;
+    color: #767676;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -13,7 +13,6 @@
 .active {
     background-color: rgb(21, 124, 234);
     border: 1.5px solid rgb(25, 26, 24);
-
     width: max-content;
     height: 21px;
     color: white;
