@@ -8,8 +8,6 @@ import ProjectSubmissions from "./pages/ProjectSubmissions";
 import Profile from "./pages/Profile";
 import PageNotFound from "./pages/PageNotFound";
 
-
-
 function App() {
   return (
     <div>
@@ -17,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/student" element={<ProjectLibrary />} />
-          <Route path="/teacher" element={<ProjectLibrary />} /> 
+          <Route path="/teacher" element={<ProjectLibrary />} />
           <Route path="/progress-tracker" element={<ProgressTracker />} />
           <Route path="/student-profiles" element={<StudentProfiles />} />
           <Route path="/help-requests" element={<HelpRequests />} />
