@@ -1,16 +1,28 @@
 import styles from "../styles/ProgressTracker/ProgressTracker.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Loading from "../shared/Loading";
 export default function StudentProgress() {
   const [progressList, setProgressList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/progress").then((response) => {
-      setProgressList(response.data);
-    });
+    axios
+      .get("http://localhost:4000/api/students/progress")
+      .then((response) => {
+        setProgressList(response.data);
+      });
   }, []);
 
-  return (
+  useEffect(() => {
+    Object.keys(progressList).length === 0
+      ? setIsLoading(true)
+      : setIsLoading(false);
+  }, [progressList]);
+
+  return isLoading ? (
+    <Loading />
+  ) : (
     <>
       {progressList.map((val) => {
         return (
@@ -24,22 +36,20 @@ export default function StudentProgress() {
               </div>
             </div>
             <div className={styles.progressContainerRight}>
-              <div className={styles.progressBtn}>1</div>
-              {/*id={val.Total === 1 ? styles.active : null}*/}
-              <div className={styles.progressBtn}>2</div>
-              <div className={styles.progressBtn}>3</div>
-              <div className={styles.progressBtn}>4</div>
-              <div className={styles.progressBtn}>5</div>
-              <div className={styles.progressBtn}>6</div>
-              <div className={styles.progressBtn}>7</div>
-              <div className={styles.progressBtn}>8</div>
-              <div className={styles.progressBtn}>9</div>
-              <div className={styles.progressBtn}>10</div>
-              <div className={styles.progressBtn}>11</div>
-              <div className={styles.progressBtn}>12</div>
-              <div className={styles.progressBtn}>13</div>
-              <div className={styles.progressBtn}>14</div>
-              <div className={styles.progressBtn}>15</div>
+              {Array.from({ length: 15 }, (_, i) => (
+                <div
+                  className={styles.progressBtn}
+                  style={{
+                    backgroundColor:
+                      val.date_completed !== null && val.project_id === i + 1
+                        ? "#99EDCC"
+                        : "white",
+                  }}
+                  key={i}
+                >
+                  {i + 1}
+                </div>
+              ))}
             </div>
           </div>
         );
