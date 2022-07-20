@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 import styles from "../styles/ProjectLibrary/ProjectLibrary.module.css"
 
-const {showProject,pic,projName,projProps} = styles;
+const {showProject,pic,projName,projProps,hovertext} = styles;
 
 const req_session = 1; // will be replaced with user session.
 
@@ -46,13 +46,15 @@ export default function Projects({ displayNumber, recordIndex, nextPage, levelSe
         return (
             <>{
                 projectList.map(project => {
-                    const { Name, projectpic, course, activity } = project;
-                    const pname = splitString(Name," - "); //remove project ## - 
+                    const { Name, projectpic, course, activity,instructions} = project;
+                    const pname = splitString(Name, '–'); //remove project ## - 
                     return (
                         <div className={showProject}>
-                            <img className={pic} src={projectpic} alt="image unavailable" />
-                            <p className={projName}>{pname}</p>
-                            <p className={projProps}>{course.toUpperCase()} |{activity}</p>
+                            <hovertext className={hovertext} data-hover={`${pname}`}> 
+                                <img  className={pic} src={projectpic} alt={pname} />
+                            </hovertext>
+                            <p className={`${projName}`}>{pname}</p>
+                            <p className={projProps}>{course.toUpperCase()} | {activity}</p>
                         </div>
                     )
                 })

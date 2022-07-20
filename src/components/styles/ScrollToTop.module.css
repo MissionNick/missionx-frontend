@@ -28,3 +28,12 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+
+@media screen and (max-width: 769px) {
+.scrollToTopBtn {
+        padding: 5px 15px;
+        font-size: 12px;
+        margin: 4px 2px;
+    }
+}

@@ -18,8 +18,7 @@ export default function Home() {
 
     return (
         <ErrorBoundary FallbackComponent={Fallback} onError={errorHandler}>
-            <ShowProfile />
-            
+            <ShowProfile /> 
         </ErrorBoundary>
     
     )
@@ -49,8 +48,9 @@ export default function Home() {
                     <button className={btn_edit}>EDIT PROFILE</button>
                     <button className={btn_edit}>CHANGE PHOTO</button>
                 </div>
+                 <BackToProject />
                 <Profile profile={profile} />
-                <BackToProject />
+               
             </div>
         )
 

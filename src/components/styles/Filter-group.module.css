@@ -1,7 +1,3 @@
-*{
-    color: #767676;
-}
-
 filterTitle {
     font-size: small;
     border-bottom-style: solid;
@@ -15,7 +11,18 @@ filterSectionEnd {
 }
 
 
+.filterList {
+    color: #767676;
+}
 
-.filterList{
-color: red;
+@media screen and (max-width: 769px) {
+    filterTitle {
+        font-size: smaller;
+        padding-bottom: 2px;
+        margin-bottom: 2px;
+    }
+
+    .filterList {
+        font-size: smaller;
+    }
 }
