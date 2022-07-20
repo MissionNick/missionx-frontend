@@ -1,4 +1,4 @@
-import styles from "../styles/home/Navbar.module.css"
+import styles from "../styles/Navbar.module.css"
 import logo from "../../assets/images/Star_Logo_07-2.png";
 import nzFlag from "../../assets/images/NZ_Flag.png";
 import maoriFlag from "../../assets/images/Maori_flag.png";
@@ -55,7 +55,7 @@ export default function Header({ setIsModalOpen }) {
                 src={userCircle}
                 alt="User Icon"
               />
-              <div
+              <div style={{ color: "white"}}
                 onClick={() => {
                   setIsModalOpen(true);
                 }}
