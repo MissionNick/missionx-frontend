@@ -1,15 +1,12 @@
 export function FilterProject(projectList, displayNumber, recordIndex, nextPage, levelSelect, subSelect) {
     
     console.log('Filter this list ->', projectList)
-        
+           
     const lev = parseInt(levelSelect) + 1;
-    const num = displayNumber;
-    
-     //const num = () => (displayNumber == 0) ? displayNumber : 5;
-    const sub = parseInt(subSelect);
+    const notZero = (num) => (num) ? num : num;//fix for initial load value?
+;   const sub = parseInt(subSelect);
 
-        
-    console.log('Filter params ->', num , recordIndex, nextPage,lev, sub)
+    console.log('Filter params ->', notZero(displayNumber) , recordIndex, nextPage,lev, sub)
         
     const courseFilter = projectList.filter(project => project.course_id === lev)
 
@@ -17,14 +14,12 @@ export function FilterProject(projectList, displayNumber, recordIndex, nextPage,
     // const projectFilter = [];
     //if (sub <3) { const subFilter = courseFilter.filter(project => project.SubscriptionID === sub) };
     
+    const pageList = courseFilter.splice(0,notZero(displayNumber) );
 
-    
-    const filtered = courseFilter.splice(0,num);
-
-    console.log ('Filtered result ->',filtered)
+    console.log ('Filtered result ->',pageList)
     
 
-    return (filtered)
+    return (pageList)
 }
 
     

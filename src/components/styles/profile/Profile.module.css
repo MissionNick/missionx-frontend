@@ -23,7 +23,7 @@
 }
 
 
-.profile {
+.profile_form {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,6 +37,12 @@
     min-height: 400px;
     background-color: #FFFFFF;
     width:min-content;
+}
+
+.btn_pos{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #EEEEEE;
 }
 
 /* Skinning */
@@ -57,12 +63,11 @@
     width: max-content;
     height: 30px;
     position: relative;
-    top:34em;
-    right:12em;
-    
+    top:32em;
+    right:12em; 
 }
 
-h {
+.title {
     font-size:3rem;
     text-align:center;
     color:#707070;
@@ -70,13 +75,13 @@ h {
 }
 
 
-label { 
+.lbl { 
     font-size: 1.5rem;
     color: #A5A5A5;
     width: 530px;
     }
 
-input {
+.data {
     border-style: hidden;
     font-size: 1.5rem;
     color: #707070;
@@ -102,7 +107,6 @@ input {
 * {
     font-weight: 700;
     letter-spacing: 0.4px;
-    font-family: Nunito;
     font-size: 16px;
    
 }

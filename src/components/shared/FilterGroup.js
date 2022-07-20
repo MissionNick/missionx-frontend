@@ -1,5 +1,7 @@
 import { useState } from "react";
-import styles from "../styles/ProjectLibrary/Filter-group.module.css";
+import styles from "../styles/Filter-group.module.css"
+
+const { filterList, filterSectionEnd, filterTitle } = styles;
 
 export default function FilterGroup({ heading, filters, doSomethingAfterClick } ) {
     
@@ -25,7 +27,7 @@ export default function FilterGroup({ heading, filters, doSomethingAfterClick } 
     return (
     <>
         <filterTitle>{heading}</filterTitle>   
-            <div className="sub-list">
+            <div className={filterList}>
                 {filters.map((name, index) => {
                 return (
                     <div key={index}>

@@ -2,6 +2,8 @@ import React from 'react';
 import styles from '../styles/profile/Profile.module.css';
 import { Link } from "react-router-dom";
 
+const {btn_back,btn_pos } = styles;
+
 
 export default function BackToProject() {
     /* Investigate alternative to <LINK>
@@ -17,11 +19,11 @@ export default function BackToProject() {
     */ 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: '#EEEEEE' }} >
+        <div className={btn_pos} >
             
             <Link to="/student">
                 <button
-                    className={styles.btn_back} 
+                    className={btn_back} 
                     >BACK TO PROJECTS</button>
             </Link>
         </div>
