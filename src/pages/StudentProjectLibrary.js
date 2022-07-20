@@ -7,7 +7,7 @@ import ScrollToTop from "../components/shared/ScrollToTop"
 
 
 
-function ProjectLibrary() {
+function StudentProjectLibrary() {
 
     
     
@@ -21,4 +21,4 @@ function ProjectLibrary() {
     )
 }
 
-export default ProjectLibrary;
+export default StudentProjectLibrary;
