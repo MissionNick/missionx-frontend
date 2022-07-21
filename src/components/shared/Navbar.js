@@ -1,4 +1,4 @@
-import styles from "../styles/home/Navbar.module.css"
+import styles from "../styles/Navbar.module.css"
 import logo from "../../assets/images/Star_Logo_07-2.png";
 import nzFlag from "../../assets/images/NZ_Flag.png";
 import maoriFlag from "../../assets/images/Maori_flag.png";
@@ -33,7 +33,7 @@ export default function Header({ setIsModalOpen, isLoggedIn, setisLoggedIn }) {
           <Link
             id={styles.headerNavLinks}
             style={{ textDecoration: "none", color: "white" }}
-            to="/"
+            to="/Teacher"
           >
             TEACHERS
           </Link>
@@ -50,6 +50,7 @@ export default function Header({ setIsModalOpen, isLoggedIn, setisLoggedIn }) {
               LANG <img className={styles.flag} src={nzFlag} alt="NZ" />{" "}
               <img className={styles.flag} src={maoriFlag} alt="Maori" />
             </div>
+<<<<<<< HEAD
             {isLoggedIn ? (
               <UserDropdown userID="Student 1" setisLoggedIn={setisLoggedIn} />
             ) : (
@@ -66,6 +67,20 @@ export default function Header({ setIsModalOpen, isLoggedIn, setisLoggedIn }) {
                 >
                   REGISTER | LOGIN
                 </div>
+=======
+            <div id={styles.login}>
+              <img
+                style={{ padding: "0px 5px" }}
+                src={userCircle}
+                alt="User Icon"
+              />
+              <div style={{ color: "white"}}
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
+              >
+                REGISTER | LOGIN
+>>>>>>> development
               </div>
             )}
           </div>

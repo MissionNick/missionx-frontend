@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
-import StudentProjectLibrary from "./pages/StudentProjectLibrary";
-// import MockTeacher from "./pages/MockTeacher";
+import ProjectLibrary from "./pages/ProjectLibrary";
 import StudentProfiles from "./pages/StudentProfiles";
 import ProgressTracker from "./pages/ProgressTracker";
 import HelpRequests from "./pages/HelpRequests";
@@ -16,8 +14,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/StudentProjectLibrary" element={<StudentProjectLibrary />} />
-          {/* <Route path="/MockTeacher" element={<MockTeacher />} /> */}
+          <Route path="/student" element={<ProjectLibrary />} />
+          <Route path="/teacher" element={<ProjectLibrary />} />
           <Route path="/progress-tracker" element={<ProgressTracker />} />
           <Route path="/student-profiles" element={<StudentProfiles />} />
           <Route path="/help-requests" element={<HelpRequests />} />
