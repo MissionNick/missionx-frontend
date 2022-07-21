@@ -5,9 +5,29 @@ import maoriFlag from "../../assets/images/Maori_flag.png";
 import userCircle from "../../assets/images/User_circle.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import UserDropdown from "../shared/UserDropdown";
+import axios from "axios";
 
-export default function Header({ setIsModalOpen }) {
+export default function Header({
+  setIsModalOpen,
+  isLoggedIn,
+  setisLoggedIn,
+}) {
   const [extendNav, setExtendNav] = useState(false);
+  const [usersName, setusersName] = useState('');
+  const [usersPic, setusersPic] = useState(userCircle);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  if (isLoggedIn & !isAuthenticated) {
+    axios
+      .post("http://localhost:4000/authenticate", {}, { withCredentials: true })
+      .then((res) => {
+        console.log(res.data.name);
+        setusersName(res.data.name);
+        console.log(res.data.profilepic);
+        setusersPic(res.data.profilepic);
+        setIsAuthenticated(true);
+      });
+  }
   return (
     <div id={styles.headerContainer}>
       <div id={styles.headerNormal}>
@@ -49,20 +69,31 @@ export default function Header({ setIsModalOpen }) {
               LANG <img className={styles.flag} src={nzFlag} alt="NZ" />{" "}
               <img className={styles.flag} src={maoriFlag} alt="Maori" />
             </div>
-            <div id={styles.login}>
-              <img
-                style={{ padding: "0px 5px" }}
-                src={userCircle}
-                alt="User Icon"
+            {isLoggedIn ? (
+              <UserDropdown
+                usersName={usersName}
+                usersPic={usersPic}
+                setisLoggedIn={setisLoggedIn}
+                setIsAuthenticated={setIsAuthenticated}
+                setusersName={setusersName}
+                setusersPic={setusersPic}
               />
-              <div style={{ color: "white"}}
-                onClick={() => {
-                  setIsModalOpen(true);
-                }}
-              >
-                REGISTER | LOGIN
+            ) : (
+              <div id={styles.login}>
+                <img
+                  style={{ padding: "0px 5px" }}
+                  src={userCircle}
+                  alt="User Icon"
+                />
+                <div
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                >
+                  REGISTER | LOGIN
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

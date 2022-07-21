@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/wjd7ohr.css");
+
 #introHome{
     font-family: 'nunito';
     display: flex;
@@ -21,6 +23,7 @@
 }
 
 #specialWord{
+    font-size: calc(20px + (70 - 20) * ((100vw - 769px) / (2560 - 769)));
     font-weight: 900;
     color: #42C0F6;
 }
