@@ -5,8 +5,9 @@ import maoriFlag from "../../assets/images/Maori_flag.png";
 import userCircle from "../../assets/images/User_circle.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import UserDropdown from "../shared/UserDropdown";
 
-export default function Header({ setIsModalOpen }) {
+export default function Header({ setIsModalOpen, isLoggedIn, setisLoggedIn }) {
   const [extendNav, setExtendNav] = useState(false);
   return (
     <div id={styles.headerContainer}>
@@ -49,20 +50,24 @@ export default function Header({ setIsModalOpen }) {
               LANG <img className={styles.flag} src={nzFlag} alt="NZ" />{" "}
               <img className={styles.flag} src={maoriFlag} alt="Maori" />
             </div>
-            <div id={styles.login}>
-              <img
-                style={{ padding: "0px 5px" }}
-                src={userCircle}
-                alt="User Icon"
-              />
-              <div
-                onClick={() => {
-                  setIsModalOpen(true);
-                }}
-              >
-                REGISTER | LOGIN
+            {isLoggedIn ? (
+              <UserDropdown userID="Student 1" setisLoggedIn={setisLoggedIn} />
+            ) : (
+              <div id={styles.login}>
+                <img
+                  style={{ padding: "0px 5px" }}
+                  src={userCircle}
+                  alt="User Icon"
+                />
+                <div
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                >
+                  REGISTER | LOGIN
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
