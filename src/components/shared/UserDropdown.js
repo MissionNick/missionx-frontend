@@ -1,9 +1,14 @@
-import userCircle from "../../assets/images/User_circle.png";
+// import userCircle from "../../assets/images/User_circle.png";
 import { useState } from "react";
 import styles from "../styles/UserDropdown.module.css";
 import axios from "axios";
 
-export default function UserDropdown({ userID, userPic, setisLoggedIn}) {
+export default function UserDropdown({
+  usersName,
+  usersPic,
+  setisLoggedIn,
+  setIsAuthenticated,
+}) {
   const [isDropOpen, setisDropOpen] = useState(false);
 
   const dropdownClick = (isDropOpen) => {
@@ -12,8 +17,8 @@ export default function UserDropdown({ userID, userPic, setisLoggedIn}) {
   return (
     <div id={styles.container}>
       <div id={styles.dropdownButton} onClick={() => dropdownClick(isDropOpen)}>
-        <img src={userCircle} alt="User pic"></img>
-        <div style={{ "padding-left": "5%" }}>{userID}</div>
+        <img id={styles.userProfilePic} src={usersPic} alt="User pic"></img>
+        <div style={{ paddingLeft: "5%", marginRight: '20%' }}>{usersName}</div>
       </div>
       {isDropOpen && (
         <div id={styles.dropdownMenu}>
@@ -29,9 +34,10 @@ export default function UserDropdown({ userID, userPic, setisLoggedIn}) {
                   { withCredentials: true }
                 )
                 .then((res) => {
-                    console.log(res);
+                  console.log(res);
                     setisLoggedIn(false);
-                    // setisDropOpen{ false };
+                    setIsAuthenticated(false);
+                  // setisDropOpen{ false };
                 });
             }}
           >
