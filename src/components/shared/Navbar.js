@@ -75,6 +75,8 @@ export default function Header({
                 usersPic={usersPic}
                 setisLoggedIn={setisLoggedIn}
                 setIsAuthenticated={setIsAuthenticated}
+                setusersName={setusersName}
+                setusersPic={setusersPic}
               />
             ) : (
               <div id={styles.login}>
