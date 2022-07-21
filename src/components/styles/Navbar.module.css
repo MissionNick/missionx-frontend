@@ -80,6 +80,9 @@ I didn't know what else to call it*/
     align-items: center;
 }
 
+#pointing{
+    cursor: pointer;
+}
 
 @media screen and (min-width:769px){
     #dropDownButton{
