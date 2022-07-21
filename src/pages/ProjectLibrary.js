@@ -5,11 +5,11 @@ import Navbar from "../components/shared/Navbar";
 import Home from "../components/project_library/Home";
 import ScrollToTop from "../components/shared/ScrollToTop";
 
-function ProjectLibrary() {
+function ProjectLibrary({ isLoggedIn, setisLoggedIn }) {
   return (
     <ErrorBoundary>
       <ScrollToTop />
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
       <Home />
       <Footer />
     </ErrorBoundary>

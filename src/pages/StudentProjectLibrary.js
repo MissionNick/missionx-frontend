@@ -7,18 +7,15 @@ import ScrollToTop from "../components/shared/ScrollToTop"
 
 
 
-function StudentProjectLibrary() {
-
-    
-    
-    return (
-        <ErrorBoundary>
-            <ScrollToTop />
-            <Navbar />
-            <Home />
-            <Footer />           
-        </ErrorBoundary>
-    )
+function StudentProjectLibrary({ isLoggedIn, setisLoggedIn }) {
+  return (
+    <ErrorBoundary>
+      <ScrollToTop />
+      <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
+      <Home />
+      <Footer />
+    </ErrorBoundary>
+  );
 }
 
 export default StudentProjectLibrary;

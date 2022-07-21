@@ -7,20 +7,28 @@ import HelpRequests from "./pages/HelpRequests";
 import ProjectSubmissions from "./pages/ProjectSubmissions";
 import Profile from "./pages/Profile";
 import PageNotFound from "./pages/PageNotFound";
+import { useState } from "react";
+import PrivateRouteStudent from "./pages/PrivateRouteStudent";
+import PrivateRouteTeacher from "./pages/PrivateRouteTeacher";
 
 function App() {
+  const [isLoggedIn, setisLoggedIn] = useState(false);
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/student" element={<ProjectLibrary />} />
-          <Route path="/teacher" element={<ProjectLibrary />} />
-          <Route path="/progress-tracker" element={<ProgressTracker />} />
-          <Route path="/student-profiles" element={<StudentProfiles />} />
-          <Route path="/help-requests" element={<HelpRequests />} />
-          <Route path="/project-submissions" element={<ProjectSubmissions />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={   <Home isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> } />
+          <Route element={ <PrivateRouteStudent isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} >
+            <Route path="/student" element={ <ProjectLibrary isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}/>
+            <Route path="/profile" element={ <Profile isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> } />
+          </Route>
+          <Route element={ <PrivateRouteTeacher isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> }>
+            <Route path="/teacher" element={ <ProjectLibrary isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}/>
+            <Route path="/progress-tracker" element={ <ProgressTracker isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}/>
+            <Route path="/student-profiles" element={ <StudentProfiles isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> }/>
+            <Route path="/help-requests" element={<HelpRequests isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />} />
+            <Route path="/project-submissions" element={<ProjectSubmissions isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} />
+          </Route>
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
