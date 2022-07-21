@@ -127,7 +127,7 @@
 
 .submitButton{
     margin-top: 3em;
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     padding-top: 0.3em;
     font-family: 'nunito';
     font-weight: 800;
@@ -159,4 +159,12 @@
     font-family: 'nunito';
     font-size: calc(20px + (25 - 20) * ((100vw - 769px) / (2560 - 769)));
     font-weight: 800;
+}
+
+.errMsg{
+    color: 707070;
+    font-family: 'nunito';
+    font-size: calc(10px + (13 - 10) * ((100vw - 769px) / (2560 - 769)));
+    font-weight: 800;
+    margin-bottom: 1em;
 }

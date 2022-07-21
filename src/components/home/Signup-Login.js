@@ -5,7 +5,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Fallback } from "../shared/Fallback";
 
-export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, setisLoggedIn }) {
+export default function SignupLogin({
+  isSignUp,
+  setIsSignUp,
+  setIsModalOpen,
+  setisLoggedIn,
+}) {
   const [stuName, setStuName] = useState("");
   const [stuEmail, setStuEmail] = useState("");
   const [stuPass, setStuPass] = useState("");
@@ -15,6 +20,28 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
   const [teachEmail, setTeachEmail] = useState("");
   const [teachPass, setTeachPass] = useState("");
   const [teachConfirm, setTeachConfirm] = useState("");
+
+  const [errMessageStu, setErrMessageStu] = useState("");
+  const [errMessageTeach, setErrMessageTeach] = useState("");
+  const [errIsVisible, setErrIsVisible] = useState(false);
+
+  function displayError(msg, isStudent) {
+    if (isStudent) {
+      setErrMessageStu(msg);
+      setErrIsVisible(true);
+      setTimeout(() => {
+        setErrIsVisible(false);
+        setErrMessageStu("");
+      }, 3000);
+    } else {
+      setErrMessageTeach(msg);
+      setErrIsVisible(true);
+      setTimeout(() => {
+        setErrIsVisible(false);
+        setErrMessageTeach("");
+      }, 3000);
+    }
+  }
 
   function clearField() {
     // setStuName("");
@@ -30,25 +57,43 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
   function student() {
     if (isSignUp) {
       // console.log("Student sign up button", stuName, stuEmail, stuPass, stuConfirm);
-      axios
-        .post(
-          "http://localhost:4000/signup/student",
-          {
-            name: stuName,
-            email: stuEmail,
-            password: stuPass,
-            confirm: stuConfirm,
-          },
-          { withCredentials: true }
-        )
-        .then((res) => {
-          console.log(res);
-          clearField();
-        })
-        .catch((err) => {
-          console.log(err);
-          clearField();
-        });
+      if ((stuPass === stuConfirm) & /\S{8,}/g.test(stuPass)) {
+        axios
+          .post(
+            "http://localhost:4000/signup/student",
+            {
+              name: stuName,
+              email: stuEmail,
+              password: stuPass,
+              confirm: stuConfirm,
+            },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res);
+            clearField();
+          })
+          .catch((err) => {
+            console.log(err.response.data);
+            if (
+              /Duplicate entry .* for key 'email'/gm.test(err.response.data)
+            ) {
+              displayError("Email already taken", true);
+            } else {
+              displayError("Signup Failed");
+            }
+            clearField();
+          });
+      } else {
+        if (stuPass === stuConfirm) {
+          displayError(
+            "Password Must have 8 characters and no whitespace",
+            true
+          );
+        } else {
+          displayError("Passwords Don't Match", true);
+        }
+      }
     } else {
       // console.log("Student login button", stuEmail, stuPass);
       axios
@@ -67,7 +112,8 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
           setIsModalOpen(false);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err.response.data);
+          displayError(err.response.data, true);
           clearField();
         });
     }
@@ -76,25 +122,43 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
   function teacher() {
     if (isSignUp) {
       // console.log("Teacher sign up button", teachName, teachEmail, teachPass, teachConfirm);
-      axios
-        .post(
-          "http://localhost:4000/signup/teacher",
-          {
-            name: teachName,
-            email: teachEmail,
-            password: teachPass,
-            confirm: teachConfirm,
-          },
-          { withCredentials: true }
-        )
-        .then((res) => {
-          console.log(res);
-          clearField();
-        })
-        .catch((err) => {
-          console.log(err);
-          clearField();
-        });
+      if ((teachPass === teachConfirm) & /\S{8,}/g.test(teachPass)) {
+        axios
+          .post(
+            "http://localhost:4000/signup/teacher",
+            {
+              name: teachName,
+              email: teachEmail,
+              password: teachPass,
+              confirm: teachConfirm,
+            },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res);
+            clearField();
+          })
+          .catch((err) => {
+            console.log(err.response.data);
+            if (
+              /Duplicate entry .* for key 'email'/gm.test(err.response.data)
+            ) {
+              displayError("Email already taken");
+            } else {
+              displayError("Signup Failed");
+            }
+            clearField();
+          });
+      } else {
+        if (teachPass === teachConfirm) {
+          displayError(
+            "Password Must have 8 characters and no whitespace",
+            true
+          );
+        } else {
+          displayError("Passwords Don't Match");
+        }
+      }
     } else {
       // console.log("Teacher login button", teachEmail, teachPass);
       axios
@@ -113,7 +177,8 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
           setIsModalOpen(false);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
+          displayError(err.response.data);
           clearField();
         });
     }
@@ -191,6 +256,14 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
               <button onClick={() => student()} className={styles.submitButton}>
                 {isSignUp ? "SIGN UP" : "LOG IN"}
               </button>
+              <div
+                style={
+                  errIsVisible ? { display: "block" } : { display: "none" }
+                }
+                className={styles.errMsg}
+              >
+                {errMessageStu}
+              </div>
             </div>
           </div>
           <div id={styles.modalRight}>
@@ -269,6 +342,14 @@ export default function SignupLogin({ isSignUp, setIsSignUp, setIsModalOpen, set
               <button onClick={() => teacher()} className={styles.submitButton}>
                 {isSignUp ? "SIGN UP" : "LOG IN"}
               </button>
+              <div
+                style={
+                  errIsVisible ? { display: "block" } : { display: "none" }
+                }
+                className={styles.errMsg}
+              >
+                {errMessageTeach}
+              </div>
             </div>
           </div>
         </div>
