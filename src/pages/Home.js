@@ -13,7 +13,7 @@ export default function Home({ isLoggedIn, setisLoggedIn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   
-
+  // localStorage.setItem('userID')
   axios
     .post("http://localhost:4000/checklogin", {}, { withCredentials: true })
     .then((res) => {
