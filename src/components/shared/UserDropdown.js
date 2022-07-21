@@ -43,7 +43,6 @@ export default function UserDropdown({
                   setusersPic(userCircle);
                   setisLoggedIn(false);
                   setIsAuthenticated(false);
-                  // setisDropOpen{ false };
                 });
             }}
           >

@@ -5,11 +5,11 @@ import Footer from "../components/shared/Footer"
 import Home from "../components/profile/Home"
 
 
-export default function Profile() {
+export default function Profile({ isLoggedIn, setisLoggedIn }) {
   return (
     <div>
       <ErrorBoundary>
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
         <Home />
         <Footer />
       </ErrorBoundary>

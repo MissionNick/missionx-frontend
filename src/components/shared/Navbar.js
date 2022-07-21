@@ -85,7 +85,7 @@ export default function Header({
                   src={userCircle}
                   alt="User Icon"
                 />
-                <div
+                <div id={styles.pointing}
                   onClick={() => {
                     setIsModalOpen(true);
                   }}

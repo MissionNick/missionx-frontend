@@ -5,10 +5,10 @@ import Navbar from "../components/shared/Navbar";
 import TeacherSidebar from "../components/shared/TeacherSidebar";
 import SecondaryFooter from "../components/shared/SecondaryFooter";
 
-export default function ProgressTracker() {
+export default function ProgressTracker({ isLoggedIn, setisLoggedIn }) {
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
       <TeacherSidebar />
       <ContentScrollCard>
         <SpreadsheetExport />
