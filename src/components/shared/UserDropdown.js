@@ -2,15 +2,10 @@
 import { useState } from "react";
 import styles from "../styles/UserDropdown.module.css";
 import axios from "axios";
-import userCircle from "../../assets/images/User_circle.png";
 
 export default function UserDropdown({
-  usersName,
-  usersPic,
   setisLoggedIn,
   setIsAuthenticated,
-  setusersName,
-  setusersPic,
 }) {
   const [isDropOpen, setisDropOpen] = useState(false);
 
@@ -20,8 +15,8 @@ export default function UserDropdown({
   return (
     <div id={styles.container}>
       <div id={styles.dropdownButton} onClick={() => dropdownClick(isDropOpen)}>
-        <img id={styles.userProfilePic} src={usersPic} alt="User pic"></img>
-        <div style={{ paddingLeft: "5%", marginRight: "20%" }}>{usersName}</div>
+        <img id={styles.userProfilePic} src={localStorage.getItem('userPic')} alt="User pic"></img>
+        <div style={{ paddingLeft: "5%", marginRight: "20%" }}>{localStorage.getItem('userName')}</div>
       </div>
       {isDropOpen && (
         <div id={styles.dropdownMenuHolder}>
@@ -39,8 +34,8 @@ export default function UserDropdown({
                 )
                 .then((res) => {
                   console.log(res);
-                  setusersName("");
-                  setusersPic(userCircle);
+                  localStorage.clear();
+                  console.log('localStorage cleared')
                   setisLoggedIn(false);
                   setIsAuthenticated(false);
                 });

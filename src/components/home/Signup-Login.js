@@ -72,6 +72,8 @@ export default function SignupLogin({
           .then((res) => {
             console.log(res);
             clearField();
+            setisLoggedIn(true);
+            setIsModalOpen(false);
           })
           .catch((err) => {
             console.log(err.response.data);
@@ -106,7 +108,8 @@ export default function SignupLogin({
           { withCredentials: true }
         )
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
+          localStorage.setItem('userID',`${parseInt(res.data)}`)
           clearField();
           setisLoggedIn(true);
           setIsModalOpen(false);
@@ -137,6 +140,8 @@ export default function SignupLogin({
           .then((res) => {
             console.log(res);
             clearField();
+            setisLoggedIn(true);
+            setIsModalOpen(false);
           })
           .catch((err) => {
             console.log(err.response.data);

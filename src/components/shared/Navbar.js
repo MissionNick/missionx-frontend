@@ -14,17 +14,22 @@ export default function Header({
   setisLoggedIn,
 }) {
   const [extendNav, setExtendNav] = useState(false);
-  const [usersName, setusersName] = useState('');
-  const [usersPic, setusersPic] = useState(userCircle);
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   if (isLoggedIn & !isAuthenticated) {
     axios
       .post("http://localhost:4000/authenticate", {}, { withCredentials: true })
       .then((res) => {
         console.log(res.data.name);
-        setusersName(res.data.name);
+        // setusersName(res.data.name);
+        localStorage.setItem('userName', `${res.data.name}`)
+        localStorage.setItem("userType", `${res.data.type}`);
         console.log(res.data.profilepic);
-        setusersPic(res.data.profilepic);
+        if (res.data.profilepic) {
+          localStorage.setItem("userPic", `${res.data.profilepic}`);
+        } else {
+          localStorage.setItem("userPic", userCircle);
+        }
+        // setusersPic(res.data.profilepic);
         setIsAuthenticated(true);
       });
   }
@@ -71,12 +76,8 @@ export default function Header({
             </div>
             {isLoggedIn ? (
               <UserDropdown
-                usersName={usersName}
-                usersPic={usersPic}
                 setisLoggedIn={setisLoggedIn}
                 setIsAuthenticated={setIsAuthenticated}
-                setusersName={setusersName}
-                setusersPic={setusersPic}
               />
             ) : (
               <div id={styles.login}>
