@@ -1,26 +1,21 @@
 import { ErrorBoundary } from 'react-error-boundary'
-import { Fallback } from '../components/shared/Fallback'
-import { errorHandler } from '../components/shared/ErrorHandler'
 
 import Footer from "../components/shared/Footer"
-import Navbar from "../components/ProjectLibrary/Navbar"
-import Home from "../components/ProjectLibrary/Home"
+import Navbar from "../components/shared/Navbar"
+import Home from "../components/project_library/Home"
 import ScrollToTop from "../components/shared/ScrollToTop"
 
 
 
-function StudentProjectLibrary() {
-
-    
-    
-    return (
-        <ErrorBoundary>
-            <ScrollToTop />
-            <Navbar />
-            <Home />
-            <Footer />           
-        </ErrorBoundary>
-    )
+function StudentProjectLibrary({ isLoggedIn, setisLoggedIn }) {
+  return (
+    <ErrorBoundary>
+      <ScrollToTop />
+      <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
+      <Home />
+      <Footer />
+    </ErrorBoundary>
+  );
 }
 
 export default StudentProjectLibrary;

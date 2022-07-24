@@ -4,10 +4,10 @@ import SecondaryFooter from "../components/shared/SecondaryFooter";
 import TeacherSidebar from "../components/shared/TeacherSidebar";
 import StudentCard from "../components/StudentProfiles/StudentCard";
 
-export default function StudentProfiles() {
+export default function StudentProfiles({ isLoggedIn, setisLoggedIn }) {
   return (
     <div>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />
       <TeacherSidebar />
       <ContentScrollCard>
         <StudentCard />

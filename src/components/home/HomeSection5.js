@@ -1,7 +1,7 @@
 import styles from "../styles/home/HomeSection5.module.css";
 import teacher from "../../assets/images/home/Teacher.png";
 
-export default function HomeSection5({ setIsModalOpen, setIsSignUp }) {
+export default function HomeSection5({ setIsModalOpen, setIsSignUp, isLoggedIn }) {
   return (
     <div id={styles.sectionFive}>
       <div id={styles.sectionFiveLeft}>
@@ -23,8 +23,10 @@ export default function HomeSection5({ setIsModalOpen, setIsSignUp }) {
             </button>
             <button
               onClick={() => {
-                setIsModalOpen(true);
-                setIsSignUp(true);
+                if (!isLoggedIn) {
+                  setIsModalOpen(true);
+                  setIsSignUp(true);
+                }
               }}
               className={styles.sectionFiveButtons}
               id={styles.sectionFiveSignup}

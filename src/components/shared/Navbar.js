@@ -1,13 +1,38 @@
-import styles from "../styles/home/Navbar.module.css"
+import styles from "../styles/Navbar.module.css"
 import logo from "../../assets/images/Star_Logo_07-2.png";
 import nzFlag from "../../assets/images/NZ_Flag.png";
 import maoriFlag from "../../assets/images/Maori_flag.png";
 import userCircle from "../../assets/images/User_circle.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import UserDropdown from "../shared/UserDropdown";
+import axios from "axios";
 
-export default function Header({ setIsModalOpen }) {
+export default function Header({
+  setIsModalOpen,
+  isLoggedIn,
+  setisLoggedIn,
+}) {
   const [extendNav, setExtendNav] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  if (isLoggedIn & !isAuthenticated) {
+    axios
+      .post("http://localhost:4000/authenticate", {}, { withCredentials: true })
+      .then((res) => {
+        console.log(res.data.name);
+        // setusersName(res.data.name);
+        sessionStorage.setItem("userName", `${res.data.name}`);
+        sessionStorage.setItem("userType", `${res.data.type}`);
+        console.log(res.data.profilepic);
+        if (res.data.profilepic) {
+          sessionStorage.setItem("userPic", `${res.data.profilepic}`);
+        } else {
+          sessionStorage.setItem("userPic", userCircle);
+        }
+        // setusersPic(res.data.profilepic);
+        setIsAuthenticated(true);
+      });
+  }
   return (
     <div id={styles.headerContainer}>
       <div id={styles.headerNormal}>
@@ -32,7 +57,7 @@ export default function Header({ setIsModalOpen }) {
           <Link
             id={styles.headerNavLinks}
             style={{ textDecoration: "none", color: "white" }}
-            to="/"
+            to="/Teacher"
           >
             TEACHERS
           </Link>
@@ -49,20 +74,27 @@ export default function Header({ setIsModalOpen }) {
               LANG <img className={styles.flag} src={nzFlag} alt="NZ" />{" "}
               <img className={styles.flag} src={maoriFlag} alt="Maori" />
             </div>
-            <div id={styles.login}>
-              <img
-                style={{ padding: "0px 5px" }}
-                src={userCircle}
-                alt="User Icon"
+            {isLoggedIn ? (
+              <UserDropdown
+                setisLoggedIn={setisLoggedIn}
+                setIsAuthenticated={setIsAuthenticated}
               />
-              <div
-                onClick={() => {
-                  setIsModalOpen(true);
-                }}
-              >
-                REGISTER | LOGIN
+            ) : (
+              <div id={styles.login}>
+                <img
+                  style={{ padding: "0px 5px" }}
+                  src={userCircle}
+                  alt="User Icon"
+                />
+                <div id={styles.pointing}
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                >
+                  REGISTER | LOGIN
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

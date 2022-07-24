@@ -7,7 +7,7 @@ const {scrollToTopBtn,showBtn }= styles;
 const ScrollToTop = () => {
 
     
-    const btnbacktotop = useRef()
+    const in_element  = useRef()
     const scrollRef = useRef()
     
     const handleToTop = () => {
@@ -20,7 +20,7 @@ const ScrollToTop = () => {
 
     const handleInviewChange = (inView,ref, entry) => {
         console.log ('Show/Hide Back to top btn if false -> Navbar inView:', inView);
-        btnbacktotop.current.className=(inView)?`${scrollToTopBtn}`:`${scrollToTopBtn} ${showBtn}`
+        in_element .current.className=(inView)?`${scrollToTopBtn}`:`${scrollToTopBtn} ${showBtn}`
 
     }
 
@@ -33,7 +33,7 @@ const ScrollToTop = () => {
                 )}
             </InView>
             <button
-                ref={btnbacktotop}
+                ref={in_element}
                 onClick={handleToTop}
                 type="button"
                 className={`${scrollToTopBtn} ${showBtn}`}

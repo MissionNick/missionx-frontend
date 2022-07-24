@@ -8,7 +8,7 @@ function PageOptions({ handleLevelClick, handleDisplayNumberClick }) {
 
 
 const levelBtnGroup = ["BEGINNER", "INTERMEDIATE", "ADVANCED"];
-const displayNumberBtnGroup = ["25", "50", "100"];
+const displayNumberBtnGroup = ["5", "10", "100"];
 
     return (
         <div id={styles.pageOptions}>
