@@ -1,6 +1,6 @@
 import styles from "../styles/home/Intro.module.css";
 
-export default function Intro({ setIsModalOpen, setIsSignUp }) {
+export default function Intro({ setIsModalOpen, setIsSignUp, isLoggedIn }) {
   return (
     <div id={styles.introHome}>
       <div id={styles.introHomeHolder}>
@@ -21,8 +21,9 @@ export default function Intro({ setIsModalOpen, setIsSignUp }) {
           <div className={styles.buttonHolder}>
             <button
               onClick={() => {
-                setIsModalOpen(true);
-                setIsSignUp(true);
+                if(!isLoggedIn)
+                {setIsModalOpen(true);
+                setIsSignUp(true);}
               }}
               className={styles.buttonHome}
               id={styles.SignUpButton}

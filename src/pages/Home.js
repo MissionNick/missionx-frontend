@@ -28,11 +28,19 @@ export default function Home({ isLoggedIn, setisLoggedIn }) {
         isLoggedIn={isLoggedIn}
         setisLoggedIn={setisLoggedIn}
       />
-      <Intro setIsModalOpen={setIsModalOpen} setIsSignUp={setIsSignUp} />
+      <Intro
+        setIsModalOpen={setIsModalOpen}
+        setIsSignUp={setIsSignUp}
+        isLoggedIn={isLoggedIn}
+      />
       <HomeSection2 />
       <HomeSection3 />
       <HomeSection4 />
-      <HomeSection5 setIsModalOpen={setIsModalOpen} setIsSignUp={setIsSignUp} />
+      <HomeSection5
+        setIsModalOpen={setIsModalOpen}
+        setIsSignUp={setIsSignUp}
+        isLoggedIn={isLoggedIn}
+      />
       <Footer />
       {isModalOpen && (
         <SignupLogin

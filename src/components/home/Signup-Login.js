@@ -4,6 +4,7 @@ import teacherImage from "../../assets/images/home/TeachLogIn.png";
 import { useState } from "react";
 import axios from "axios";
 import { Fallback } from "../shared/Fallback";
+import { useNavigate } from "react-router";
 
 export default function SignupLogin({
   isSignUp,
@@ -11,6 +12,8 @@ export default function SignupLogin({
   setIsModalOpen,
   setisLoggedIn,
 }) {
+  const navigate = useNavigate();
+
   const [stuName, setStuName] = useState("");
   const [stuEmail, setStuEmail] = useState("");
   const [stuPass, setStuPass] = useState("");
@@ -74,6 +77,9 @@ export default function SignupLogin({
             clearField();
             setisLoggedIn(true);
             setIsModalOpen(false);
+            setTimeout(() => {
+              navigate("/student");
+            }, 2000);
           })
           .catch((err) => {
             console.log(err.response.data);
@@ -109,10 +115,13 @@ export default function SignupLogin({
         )
         .then((res) => {
           console.log(res.data);
-          localStorage.setItem('userID',`${parseInt(res.data)}`)
+          // sessionStorage.setItem("userID", `${parseInt(res.data)}`);
           clearField();
           setisLoggedIn(true);
           setIsModalOpen(false);
+          setTimeout(() => {
+            navigate("/student")
+          }, 2000);
         })
         .catch((err) => {
           // console.log(err.response.data);
@@ -142,6 +151,9 @@ export default function SignupLogin({
             clearField();
             setisLoggedIn(true);
             setIsModalOpen(false);
+            setTimeout(() => {
+              navigate("/teacher");
+            }, 2000);
           })
           .catch((err) => {
             console.log(err.response.data);
@@ -180,6 +192,9 @@ export default function SignupLogin({
           clearField();
           setisLoggedIn(true);
           setIsModalOpen(false);
+          setTimeout(() => {
+            navigate("/teacher");
+          }, 2000);
         })
         .catch((err) => {
           // console.log(err);

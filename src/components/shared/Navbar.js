@@ -21,13 +21,13 @@ export default function Header({
       .then((res) => {
         console.log(res.data.name);
         // setusersName(res.data.name);
-        localStorage.setItem('userName', `${res.data.name}`)
-        localStorage.setItem("userType", `${res.data.type}`);
+        sessionStorage.setItem("userName", `${res.data.name}`);
+        sessionStorage.setItem("userType", `${res.data.type}`);
         console.log(res.data.profilepic);
         if (res.data.profilepic) {
-          localStorage.setItem("userPic", `${res.data.profilepic}`);
+          sessionStorage.setItem("userPic", `${res.data.profilepic}`);
         } else {
-          localStorage.setItem("userPic", userCircle);
+          sessionStorage.setItem("userPic", userCircle);
         }
         // setusersPic(res.data.profilepic);
         setIsAuthenticated(true);
