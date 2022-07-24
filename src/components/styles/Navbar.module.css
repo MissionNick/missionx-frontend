@@ -89,6 +89,10 @@ I didn't know what else to call it*/
         display: none;
     }
     
+    #headerDropDown{
+        display: none;
+    }
+
 }
 
 @media screen and (max-width:769px){

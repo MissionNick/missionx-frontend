@@ -4,7 +4,7 @@ import NeedLogIn from "../components/shared/NeedLogIn";
 
 
 export default function PrivateRouteTeacher({ isLoggedIn, setisLoggedIn }) {
-  const type = localStorage.getItem("userType");
+  const type = sessionStorage.getItem("userType");
   axios
     .post("http://localhost:4000/checklogin", {}, { withCredentials: true })
     .then((res) => {

@@ -10,6 +10,7 @@ import PageNotFound from "./pages/PageNotFound";
 import { useState } from "react";
 import PrivateRouteStudent from "./pages/PrivateRouteStudent";
 import PrivateRouteTeacher from "./pages/PrivateRouteTeacher";
+import PrivateRoute from "./pages/PrivateRoute";
 
 function App() {
   const [isLoggedIn, setisLoggedIn] = useState(false);
@@ -17,10 +18,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={   <Home isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> } />
+          <Route path="/" element={<Home isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />} />
+          <Route element={<PrivateRoute isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}>
+            <Route path="/profile" element={<Profile isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>}/>
+          </Route>
           <Route element={ <PrivateRouteStudent isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn}/>} >
             <Route path="/student" element={ <ProjectLibrary isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}/>
-            <Route path="/profile" element={ <Profile isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> } />
           </Route>
           <Route element={ <PrivateRouteTeacher isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} /> }>
             <Route path="/teacher" element={ <ProjectLibrary isLoggedIn={isLoggedIn} setisLoggedIn={setisLoggedIn} />}/>
